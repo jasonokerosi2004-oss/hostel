@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hall Gate QR Scanner - Caretaker Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- html5-qrcode library for camera QR scanning -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'caretaker_dashboard' %}"><i class="bi bi-arrow-left"></i> Back to Caretaker Dashboard</a>
+            <span class="text-white"><i class="bi bi-shield-check"></i> Gate Security Desk</span>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        
+        <!-- Feedback Alerts -->
+        {% if message %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> {{ error }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <!-- Scanner & Form Column -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        <i class="bi bi-qr-code-scan"></i> Entrance Pass Scanner
+                    </div>
+                    <div class="card-body">
+                        
+                        <!-- Camera Viewport -->
+                        <div id="reader" class="mb-3 rounded overflow-hidden border" style="width: 100%;"></div>
+
+                        <!-- Manual/Scanned Submission Form -->
+                        <form method="POST" id="scanForm">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="scan_type" class="form-label fw-bold">Scan Direction</label>
+                                <select class="form-select" id="scan_type" name="scan_type" required>
+                                    <option value="ENTRY">ENTRY (Checking In)</option>
+                                    <option value="EXIT">EXIT (Leaving Hall)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="reg_number" class="form-label fw-bold">Student Registration Number</label>
+                                <input type="text" class="form-control" id="reg_number" name="reg_number" placeholder="e.g. IN13/00137/24" required>
+                                <div class="form-text">Scanned QR code data will populate here automatically, or you can type it manually.</div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-save"></i> Submit Gate Log
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Scans Log Column -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-secondary text-white fw-bold">
+                        <i class="bi bi-clock-history"></i> Recent Gate Scans ({{ caretaker.hall.hall_name }})
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Student</th>
+                                        <th>Reg No.</th>
+                                        <th>Direction</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for scan in recent_scans %}
+                                    <tr>
+                                        <td>{{ scan.student.full_name }}</td>
+                                        <td><code>{{ scan.student.reg_number }}</code></td>
+                                        <td>
+                                            <span class="badge {% if scan.scan_type == 'ENTRY' %}bg-success{% else %}bg-warning text-dark{% endif %}">
+                                                {{ scan.scan_type }}
+                                            </span>
+                                        </td>
+                                        <td><small>{{ scan.timestamp|date:"H:i:s" }}</small></td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="4" class="text-center text-muted py-4">No gate scans recorded yet today.</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script to handle QR Camera Scanning -->
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Automatically fill the registration number input field with the scanned QR text
+            document.getElementById('reg_number').value = decodedText.trim();
+            // Optional: Automatically submit the form upon successful scan
+            document.getElementById('scanForm').submit();
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 }, false);
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+
+</body>
+</html>

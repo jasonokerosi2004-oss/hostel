@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detailed Room Inventory - {{ assigned_hall.hall_name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'caretaker_dashboard' %}"><i class="bi bi-arrow-left"></i> Back to Caretaker Dashboard</a>
+            <span class="text-white"><i class="bi bi-building"></i> {{ assigned_hall.hall_name }} Inventory</span>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2>Hall Room Breakdown</h2>
+                <p class="text-muted mb-0">Total Rooms: <strong>{{ total_rooms }}</strong> | Policy: <strong>{{ assigned_hall.gender_policy }}</strong></p>
+            </div>
+            <a href="{% url 'log_room_defect' %}" class="btn btn-outline-danger">
+                <i class="bi bi-tools"></i> Log Room Defect
+            </a>
+        </div>
+
+        <!-- Room Grid -->
+        <div class="row">
+            {% for item in room_data %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-white border-bottom fw-bold">
+                        <span><i class="bi bi-door-closed-fill"></i> Room {{ item.room.room_number }}</span>
+                        <span class="badge {{ item.status_bg }}">{{ item.status }}</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-2"><strong>Room Type:</strong> {{ item.room.room_type }}</p>
+                        <p class="mb-2"><strong>Capacity:</strong> {{ item.room.bed_capacity }} Beds</p>
+                        <p class="mb-3">
+                            <strong>Bed Availability:</strong> 
+                            <span class="text-success fw-bold">{{ item.vacant_beds }} Vacant</span> / 
+                            <span class="text-primary">{{ item.occupant_count }} Occupied</span>
+                        </p>
+
+                        <hr class="my-2">
+                        
+                        <h6 class="fw-bold text-muted mb-2"><i class="bi bi-people"></i> Current Resident Occupants</h6>
+                        <ul class="list-unstyled mb-0">
+                            {% for alloc in item.occupants %}
+                            <li class="small py-1 border-bottom d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-person-fill text-primary"></i> <strong>{{ alloc.application.student.full_name }}</strong><br>
+                                    <span class="text-muted"><code>{{ alloc.application.student.reg_number }}</code></span>
+                                </div>
+                                <span class="badge {% if alloc.status == 'Active' %}bg-success{% else %}bg-warning text-dark{% endif %}">
+                                    {{ alloc.status }}
+                                </span>
+                            </li>
+                            {% empty %}
+                            <li class="small text-muted italic py-1"><i class="bi bi-dash-circle"></i> No residents allocated to this room.</li>
+                            {% endfor %}
+                        </ul>
+
+                        {% if item.open_maintenance_count > 0 %}
+                        <div class="alert alert-danger py-1 px-2 mt-3 mb-0 small">
+                            <i class="bi bi-exclamation-triangle-fill"></i> {{ item.open_maintenance_count }} Open Defect Report(s)
+                        </div>
+                        {% endif %}
+
+                        <hr class="my-3">
+                        
+                        <!-- Room Inspection & Repair Lifecycle Actions -->
+                        <div class="d-grid gap-2">
+                            <a href="{% url 'conduct_room_inspection' item.room.room_id %}" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-clipboard2-check"></i> Conduct Room Inspection
+                            </a>
+                            {% if item.status == 'Under Maintenance' %}
+                            <a href="{% url 'return_room_to_service' item.room.room_id %}" class="btn btn-sm btn-success">
+                                <i class="bi bi-check-circle"></i> Return Room to Service
+                            </a>
+                            {% else %}
+                            <a href="{% url 'mark_room_under_repair' item.room.room_id %}" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-tools"></i> Mark Under Repair
+                            </a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center text-muted py-5">
+                <h5>No rooms configured for this hall yet.</h5>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+</html>

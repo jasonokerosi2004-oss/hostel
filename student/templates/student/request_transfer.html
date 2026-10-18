@@ -1,0 +1,63 @@
+{% extends 'student/base.html' %}
+
+{% block title %}Request Room Transfer - Hostel Portal{% endblock %}
+
+{% block content %}
+<div style="max-width: 750px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); margin-bottom: 30px;">
+    <h2 style="color: #1e293b; margin-bottom: 10px;">Room Transfer Request</h2>
+    <p style="color: #64748b; margin-bottom: 20px; font-size: 14px;">
+        Current Room: <strong>Room {{ allocation.room.room_number }} ({{ allocation.room.hall.hall_name }})</strong>
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #334155;">
+                    {{ field.label }}
+                </label>
+                {{ field }}
+                {% if field.errors %}
+                    <span style="color: #dc3545; font-size: 12px;">{{ field.errors.0 }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer;">Submit Transfer Request</button>
+    </form>
+</div>
+
+<!-- Transfer History Section -->
+<div style="max-width: 750px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+    <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 18px;">Your Transfer Requests History</h3>
+    
+    {% if transfer_history %}
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+            <thead>
+                <tr style="border-bottom: 2px solid #e2e8f0; color: #475569;">
+                    <th style="padding: 10px;">Preferred Hall/Room</th>
+                    <th style="padding: 10px;">Reason</th>
+                    <th style="padding: 10px;">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for req in transfer_history %}
+                    <tr style="border-bottom: 1px solid #f1f5f9; color: #334155;">
+                        <td style="padding: 12px;">{{ req.requested_preference }}</td>
+                        <td style="padding: 12px;">{{ req.reason|default:"N/A" }}</td>
+                        <td style="padding: 12px;">
+                            <span style="padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; 
+                                {% if req.status == 'Approved' %}background: #dcfce7; color: #166534;
+                                {% elif req.status == 'Declined' %}background: #fee2e2; color: #991b1b;
+                                {% else %}background: #fef9c3; color: #854d0e;{% endif %}">
+                                {{ req.status }}
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="color: #64748b; font-size: 14px;">You have not made any room transfer requests yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Student Portal - Hostel Management{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; display: flex; height: 100vh; overflow: hidden; }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background-color: #1e47af;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 0;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .sidebar-menu li a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 24px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .sidebar-menu li a:hover {
+            background-color: #1d4ed8;
+            border-left-color: #93fdbf;
+        }
+        .sidebar-menu li a.active {
+            background-color: #991b1b; /* Dark red highlight for active page */
+            border-left-color: #fca5a5;
+        }
+        .arrow { font-size: 12px; color: #cbd5e1; }
+
+        /* Main Container */
+        .main-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Topbar with Logo and Brand Name on the Left */
+        .topbar {
+            background: white;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .brand-container img {
+            width: 45px;
+            height: auto;
+            object-fit: contain;
+        }
+        .brand-container h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .content-body {
+            padding: 30px;
+        }
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .logout-btn:hover { background: #dc2626; }
+
+        /* Flash Messages */
+        .alert { padding: 12px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px; }
+        .alert-success { background: #dcfce7; color: #166534; }
+        .alert-error { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Component -->
+    <div class="sidebar">
+        <ul class="sidebar-menu">
+            <li><a href="{% url 'student_dashboard' %}" class="{% if request.resolver_match.url_name == 'student_dashboard' %}active{% endif %}">Dashboard <span>&rsaquo;</span></a></li>
+            <li><a href="{% url 'apply_room' %}" class="{% if request.resolver_match.url_name == 'apply_room' %}active{% endif %}">Room Application <span>&rsaquo;</span></a></li>
+            <li><a href="{% url 'student_dashboard' %}">View Application Status <span>&rsaquo;</span></a></li>
+            <li><a href="{% url 'student_dashboard' %}">View Allocation <span>&rsaquo;</span></a></li>
+            <li><a href="{% url 'confirm_allocation' %}" class="{% if request.resolver_match.url_name == 'confirm_allocation' %}active{% endif %}">Confirm Allocation <span>&rsaquo;</span></a></li>
+            <li><a href="{% url 'request_transfer' %}" class="{% if request.resolver_match.url_name == 'request_transfer' %}active{% endif %}">Request Transfer <span>&rsaquo;</span></a></li>
+            <li><a href="#">Announcements <span>&rsaquo;</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Topbar with Logo, Avatar, and Title -->
+        <div class="topbar">
+            <div class="brand-container">
+                <img src="{% static 'student/logo.png' %}" alt="Portal Logo">
+                <h2>Kisii University</h2>
+            </div>
+            <div class="user-actions">
+                <!-- Circular Avatar & Welcome Information -->
+                {% if student %}
+                    <a href="{% url 'student_dashboard' %}" title="View Dashboard" style="text-decoration: none; display: flex; align-items: center;">
+                        {% if student.profile_picture %}
+                            <img src="{{ student.profile_picture.url }}" alt="Profile" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid #3b82f6;">
+                        {% else %}
+                            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px;">
+                                {{ student.full_name|slice:":2"|upper }}
+                            </div>
+                        {% endif %}
+                    </a>
+                    <span style="font-size: 14px; font-weight: 500; color: #334155;">
+                        Welcome, {{ student.full_name }}
+                    </span>
+                {% else %}
+                    <span style="font-size: 14px; font-weight: 500; color: #334155;">
+                        Welcome, {{ request.user.username }}
+                    </span>
+                {% endif %}
+
+                <form action="{% url 'logout' %}" method="post" style="display:inline; margin-left: 10px;">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-btn">Sign Out</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="content-body">
+            <!-- Flash Messages with Deduplication -->
+            {% if messages %}
+                {% with printed_messages="" %}
+                    {% for message in messages %}
+                        {% if message.message not in printed_messages %}
+                            <div class="alert {% if message.tags == 'error' %}alert-error{% else %}alert-success{% endif %}">
+                                {{ message }}
+                            </div>
+                            {% with printed_messages=printed_messages|add:message.message %}{% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+            {% endif %}
+
+            {% block content %}
+            <!-- Page specific content renders here -->
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>

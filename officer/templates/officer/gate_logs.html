@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biometric & Gate Audit Trail - Kisii University</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .header { background: #1e3a8a; color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 6px; }
+        .container { padding: 30px; max-width: 1450px; margin: 0 auto; }
+        .grid-layout { display: grid; grid-template-columns: 350px 1fr; gap: 25px; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 13px; color: #475569; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+        .btn-scan { width: 100%; background: #2563eb; color: white; border: none; padding: 12px; font-weight: 600; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .btn-scan:hover { background: #1d4ed8; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        th { background: #f8fafc; color: #475569; font-weight: 600; }
+        .badge-entry { background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .badge-exit { background: #fee2e2; color: #b91c1c; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .alert { padding: 12px 15px; border-radius: 6px; margin-bottom: 20px; font-weight: 600; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>🚪 Biometric & Check-In Gate Integration</h2>
+        <a href="{% url 'officer_dashboard' %}" class="nav-link">← Back to Dashboard</a>
+    </div>
+
+    <div class="container">
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert" style="{% if 'Denied' in message or 'not found' in message %}background: #fee2e2; color: #b91c1c; border-color: #fecaca;{% endif %}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="grid-layout">
+            <!-- Simulated Scanner Form -->
+            <div class="card" style="height: fit-content;">
+                <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 15px;">Simulate Gate Scan</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="reg_number">Student Registration No.</label>
+                        <input type="text" name="reg_number" id="reg_number" placeholder="e.g., SCT221-0001/2024" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scan_type">Scan Direction</label>
+                        <select name="scan_type" id="scan_type" required>
+                            <option value="ENTRY">ENTRY (Check-In)</option>
+                            <option value="EXIT">EXIT (Check-Out)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-scan">📡 Process Gate Scan</button>
+                </form>
+            </div>
+
+            <!-- Live Audit Trail Table -->
+            <div class="card">
+                <h3 style="font-size: 16px; color: #1e3a8a; margin-bottom: 15px;">📋 Live Hostel Gate Audit Trail</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Student</th>
+                            <th>Hall & Room</th>
+                            <th>Direction</th>
+                            <th>Gate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs %}
+                        <tr>
+                            <td style="color: #64748b; font-size: 13px;">{{ log.timestamp|date:"M d, Y H:i:s" }}</td>
+                            <td>
+                                <strong>{{ log.student.full_name }}</strong><br>
+                                <small style="color: #64748b;">{{ log.student.reg_number }}</small>
+                            </td>
+                            <td>{{ log.allocation.room.hall.hall_name }} - Room {{ log.allocation.room.room_number }}</td>
+                            <td>
+                                {% if log.scan_type == 'ENTRY' %}
+                                    <span class="badge-entry">ENTRY 🟢</span>
+                                {% else %}
+                                    <span class="badge-exit">EXIT 🔴</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ log.gate_name }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: #64748b; padding: 25px;">No gate scans recorded yet.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

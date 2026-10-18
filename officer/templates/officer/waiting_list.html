@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waiting List Management - Accommodation Officer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .header { background: #1e3a8a; color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 6px; }
+        .container { padding: 30px; max-width: 1400px; margin: 0 auto; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .metric-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #3b82f6; }
+        .metric-card h3 { font-size: 13px; color: #64748b; margin-bottom: 6px; text-transform: uppercase; }
+        .metric-card .number { font-size: 26px; font-weight: 700; color: #0f172a; }
+        .filter-bar { background: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; display: flex; gap: 15px; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .filter-bar input, .filter-bar select { padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+        .btn-filter { background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .section-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        th { background: #f8fafc; color: #475569; font-weight: 600; }
+        .btn-promote { background: #16a34a; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 12px; }
+        .btn-remove { background: #dc2626; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 12px; }
+        .alert { padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; font-weight: 600; }
+        .alert-success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+        .alert-error { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+        .badge-score { background: #e0f2fe; color: #0369a1; font-weight: 700; padding: 4px 8px; border-radius: 4px; border: 1px solid #bae6fd; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>🏛️ Waiting List Management</h2>
+        <div style="display: flex; gap: 15px;">
+            <a href="{% url 'officer_dashboard' %}" class="nav-link">← Back to Dashboard</a>
+            <a href="{% url 'view_applications' %}" class="nav-link">📋 Applications</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}error{% else %}success{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Metrics Cards -->
+        <div class="metrics-grid">
+            <div class="metric-card" style="border-left-color: #3b82f6;">
+                <h3>Total Waiting</h3>
+                <div class="number">{{ total_waiting_count }}</div>
+            </div>
+            <div class="metric-card" style="border-left-color: #0284c7;">
+                <h3>Male Students</h3>
+                <div class="number">{{ male_waiting_count }}</div>
+            </div>
+            <div class="metric-card" style="border-left-color: #ec4899;">
+                <h3>Female Students</h3>
+                <div class="number">{{ female_waiting_count }}</div>
+            </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <form method="GET" class="filter-bar">
+            <input type="text" name="q" placeholder="Search by Reg No or Name..." value="{{ search_query }}" style="flex: 1;">
+            <select name="gender">
+                <option value="">All Genders</option>
+                <option value="Male" {% if selected_gender == 'Male' %}selected{% endif %}>Male</option>
+                <option value="Female" {% if selected_gender == 'Female' %}selected{% endif %}>Female</option>
+            </select>
+            <button type="submit" class="btn-filter">Filter Queue</button>
+        </form>
+
+        <!-- Waitlist Table -->
+        <div class="section-box">
+            <h2 style="font-size: 18px; color: #1e3a8a; margin-bottom: 15px;">⏳ Priority Room Waitlist</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Queue Position</th>
+                        <th>Student Name</th>
+                        <th>Reg Number</th>
+                        <th>Gender</th>
+                        <th>Year</th>
+                        <th>Priority Score</th>
+                        <th>Entry Timestamp</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in waitlist %}
+                    <tr>
+                        <td><strong>#{{ forloop.counter }}</strong></td>
+                        <td style="font-weight: 600;">{{ item.student.full_name }}</td>
+                        <td>{{ item.student.reg_number }}</td>
+                        <td>{{ item.student.gender }}</td>
+                        <td>Year {{ item.student.year_of_study }}</td>
+                        <td>
+                            <span class="badge-score">
+                                ⭐ {{ item.priority_score }} pts
+                            </span>
+                        </td>
+                        <td>{{ item.entry_timestamp|date:"M d, Y H:i" }}</td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <form action="{% url 'promote_from_waitlist' item.queue_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-promote" onclick="return confirm('Promote student and assign room?')">⚡ Promote to Room</button>
+                                </form>
+                                <form action="{% url 'remove_from_waitlist' item.queue_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-remove" onclick="return confirm('Remove student from waiting list?')">Remove</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8" style="padding: 20px; color: #64748b; text-align: center;">No students currently on the waiting list.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

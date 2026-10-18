@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semester Check-Out & Clearance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'caretaker_dashboard' %}"><i class="bi bi-arrow-left"></i> Back to Caretaker Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-header bg-warning text-dark fw-bold">
+                        <h4 class="mb-0"><i class="bi bi-box-arrow-right"></i> Semester Check-Out & Clearance Sign-Off</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        
+                        <!-- Student Summary -->
+                        <div class="alert alert-secondary mb-4">
+                            <h5 class="alert-heading text-dark fw-bold">Resident Student Details</h5>
+                            <p class="mb-1"><strong>Name:</strong> {{ allocation.application.student.full_name }}</p>
+                            <p class="mb-1"><strong>Registration Number:</strong> {{ allocation.application.student.reg_number }}</p>
+                            <p class="mb-0"><strong>Room Vacating:</strong> Room {{ allocation.room.room_number }} (Hall: {{ allocation.room.hall.hall_name }})</p>
+                        </div>
+
+                        <!-- Checkout Form -->
+                        <form method="POST">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="key_returned" name="key_returned" required>
+                                <label class="form-check-label fw-bold" for="key_returned">Room Key Successfully Returned & Inspected</label>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="damage_penalty" class="form-label fw-bold">Damage Penalty Amount (KES)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">KES</span>
+                                    <input type="number" step="0.01" min="0" class="form-control" id="damage_penalty" name="damage_penalty" value="0.00">
+                                </div>
+                                <div class="form-text">Enter 0 if the room is cleared with zero damages.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="penalty_reason" class="form-label fw-bold">Penalty Remarks / Damage Description</label>
+                                <textarea class="form-control" id="penalty_reason" name="penalty_reason" rows="3" placeholder="If there are damages or missing items, specify details here..."></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-warning btn-dark btn-lg">
+                                    <i class="bi bi-check2-all"></i> Approve Clearance & Complete Check-Out
+                                </button>
+                                <a href="{% url 'caretaker_dashboard' %}" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

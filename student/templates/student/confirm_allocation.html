@@ -1,0 +1,37 @@
+{% extends 'student/base.html' %}
+
+{% block title %}Confirm Room Allocation - Hostel Portal{% endblock %}
+
+{% block content %}
+<div style="max-width: 650px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+    <h2 style="color: #1e293b; margin-bottom: 10px;">Confirm Your Room Allocation</h2>
+    <p style="color: #64748b; margin-bottom: 20px; font-size: 14px;">
+        Please review your assigned room details below and confirm before your deadline.
+    </p>
+
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="margin: 5px 0;"><strong>Hall:</strong> {{ allocation.room.hall.hall_name }}</p>
+        <p style="margin: 5px 0;"><strong>Room Number:</strong> {{ allocation.room.room_number }}</p>
+        <p style="margin: 5px 0;"><strong>Status:</strong> <span style="color: #d97706; font-weight: 600;">{{ allocation.status }}</span></p>
+        {% if allocation.confirmation_deadline %}
+            <p style="margin: 5px 0; color: #dc2626;"><strong>Confirmation Deadline:</strong> {{ allocation.confirmation_deadline }}</p>
+        {% endif %}
+    </div>
+
+    {% if allocation.status != 'Confirmed' %}
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" style="background: #16a34a; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer;">
+            Confirm Allocation Now ✅
+        </button>
+        <a href="{% url 'student_dashboard' %}" style="margin-left: 10px; color: #64748b; text-decoration: none; font-size: 14px;">Cancel</a>
+    </form>
+    {% else %}
+        <div style="background: #dcfce7; color: #166534; padding: 12px; border-radius: 6px; font-weight: 600;">
+            This allocation has already been confirmed!
+        </div>
+        <br>
+        <a href="{% url 'student_dashboard' %}" style="background: #1e40af; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block; font-size: 14px;">Back to Dashboard</a>
+    {% endif %}
+</div>
+{% endblock %}

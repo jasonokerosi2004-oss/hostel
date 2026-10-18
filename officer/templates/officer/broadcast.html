@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulk Notification Broadcast Engine - Accommodation Officer Portal</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .header { background: #1e3a8a; color: white; padding: 20px 30px; display: flex; flex-direction: column; gap: 15px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-container { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: rgba(0, 0, 0, 0.15); padding: 10px 15px; border-radius: 8px; }
+        .nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 13px; background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 6px; }
+        .nav-link:hover { background: rgba(255,255,255,0.3); }
+        .container { padding: 30px; max-width: 900px; margin: 0 auto; }
+        .form-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #334155; font-size: 14px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+        .form-group textarea { height: 150px; resize: vertical; }
+        .btn-submit { background: #2563eb; color: white; border: none; padding: 12px 24px; font-weight: 600; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .btn-submit:hover { background: #1d4ed8; }
+        .alert { padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; font-weight: 600; background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-top">
+            <h2>📢 Bulk Notification Broadcast Engine</h2>
+            <span>Staff Member Session</span>
+        </div>
+        <div class="nav-container">
+            <a href="{% url 'officer_dashboard' %}" class="nav-link">🏠 Dashboard</a>
+            <a href="{% url 'broadcast_notifications' %}" class="nav-link" style="background: rgba(255,255,255,0.3);">📢 Broadcasts</a>
+            <a href="{% url 'manage_students' %}" class="nav-link">🎓 Students</a>
+            <a href="{% url 'occupancy_analytics' %}" class="nav-link">📈 Analytics</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="form-card">
+            <h2 style="font-size: 18px; color: #1e3a8a; margin-bottom: 20px;">Send Cohort Announcement</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="target_group">Target Cohort / Group</label>
+                    <select name="target_group" id="target_group" required>
+                        <option value="all">All Registered Students ({{ total_students }})</option>
+                        <option value="year_1">Year 1 Students</option>
+                        <option value="year_2">Year 2 Students</option>
+                        <option value="year_3">Year 3 Students</option>
+                        <option value="year_4">Year 4 Students</option>
+                        <option value="unallocated">Unallocated Students Only</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Notification Subject / Title</label>
+                    <input type="text" name="title" id="title" placeholder="e.g., Important: Fee Clearance Deadline for Hostel Booking" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message Content</label>
+                    <textarea name="message" id="message" placeholder="Type your announcement details here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">🚀 Broadcast Announcement Now</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

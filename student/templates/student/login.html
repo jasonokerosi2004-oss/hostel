@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kisii University Hostel Portal - Login</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f6f9; 
+            display: flex; 
+            height: 100vh; 
+            overflow: hidden;
+        }
+        
+        /* Left Side: Branding / Image Panel */
+        .left-panel {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+            background-color: #1e40af;
+        }
+
+        /* Background Slideshow Wrapper */
+        .bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Alternating Slideshow Animation */
+        .bg-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: imageSlide 18s infinite;
+        }
+
+        /* Timing delay for each of the 3 alternating images (18s total cycle: 6s per image) */
+        .bg-wrapper img:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .bg-wrapper img:nth-child(2) {
+            animation-delay: 6s;
+        }
+        .bg-wrapper img:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        @keyframes imageSlide {
+            0% { opacity: 0; transform: scale(1.05); }
+            8% { opacity: 1; transform: scale(1); }
+            33% { opacity: 1; transform: scale(1); }
+            41% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(1.05); }
+        }
+
+        /* Blue gradient overlay for contrast and text readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 64, 175, 0.45);
+            z-index: 2;
+        }
+
+        /* Content layer */
+        .left-content {
+            position: relative;
+            z-index: 3;
+        }
+        .left-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .left-content p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Right Side: Login Form Panel */
+        .right-panel {
+            width: 500px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.05);
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        .login-card { 
+            width: 100%; 
+            max-width: 380px; 
+            text-align: center;
+        }
+        .logo-container img {
+            width: 90px;
+            height: auto;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        h2 { 
+            color: #1e293b; 
+            margin-bottom: 6px; 
+            font-size: 24px;
+            font-weight: 700;
+        }
+        p.subtitle {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .form-group { 
+            text-align: left;
+            margin-bottom: 18px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 6px; 
+            color: #1e293b; 
+            font-weight: 600; 
+            font-size: 13px;
+        }
+        input[type="text"], input[type="password"] { 
+            width: 100%; 
+            padding: 12px 14px; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 8px; 
+            font-size: 14px;
+            color: #334155;
+            background-color: #f8fafc;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input[type="text"]:focus, input[type="password"]:focus { 
+            border-color: #3b82f6; 
+            outline: none; 
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #475569;
+        }
+        .forgot-password a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        button[type="submit"] { 
+            width: 100%; 
+            background-color: #1e40af; 
+            color: white; 
+            padding: 12px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 15px; 
+            font-weight: 600;
+            cursor: pointer; 
+            transition: background-color 0.2s;
+        }
+        button[type="submit"]:hover { 
+            background-color: #1d4ed8; 
+        }
+        .errorlist { 
+            color: #ef4444; 
+            font-size: 13px; 
+            list-style: none; 
+            padding: 0; 
+            margin-bottom: 15px; 
+            text-align: left;
+        }
+        .signup-link {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #64748b;
+        }
+        .signup-link a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .left-panel { display: none; }
+            .right-panel { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Background & Branding Section with Alternating Slideshow Images -->
+    <div class="left-panel">
+        <div class="bg-wrapper">
+            <img src="{% static 'student/kisii.jpg' %}" alt="Kisii Image">
+            <img src="{% static 'student/hostel.jpg' %}" alt="Kisii Image">
+            <img src="{% static 'student/sakawa.jpg' %}" alt="Kisii Image">
+            <img src="{% static 'student/oxford.jpg' %}" alt="Kisii Image">
+            <img src="{% static 'student/kisiiuni.jpg' %}" alt="Kisii Uni Image">
+            <img src="{% static 'student/kisiiuniversity.jpg' %}" alt="Kisii University Image">
+        </div>
+        <div class="overlay"></div>
+        <div class="left-content">
+            <h1>Kisii University Hostel Portal</h1>
+            <p>Streamlining room allocations, transfers, and housing services securely.</p>
+        </div>
+    </div>
+
+    <!-- Right Login Form Section -->
+    <div class="right-panel">
+        <div class="login-card">
+            <div class="logo-container">
+                <img src="{% static 'student/logo.png' %}" alt="Portal Logo">
+            </div>
+
+            <h2>Kisii University Portal</h2>
+            <p class="subtitle">Sign in to access your student, caretaker, or officer dashboard</p>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                <div class="form-group">
+                    <label for="id_username">Username</label>
+                    {{ form.username }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    {{ form.password }}
+                </div>
+
+                <div class="form-actions">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+                
+                <button type="submit">Sign Sign In</button>
+            </form>
+
+            <div class="signup-link">
+                Don't have an account? <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

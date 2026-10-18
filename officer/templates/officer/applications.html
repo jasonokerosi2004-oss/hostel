@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Applications - Kisii University</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        .header { background: #1e3a8a; color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .header a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 6px; }
+        .container { padding: 30px; max-width: 1450px; margin: 0 auto; }
+        .section-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 30px; overflow-x: auto; }
+        .filter-bar { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+        .filter-group { display: flex; gap: 10px; align-items: center; }
+        input[type="text"], select { padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; }
+        .btn-search { background: #2563eb; color: white; border: none; padding: 10px 18px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; white-space: nowrap; }
+        th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        th { background: #f8fafc; color: #475569; font-weight: 600; }
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; }
+        .badge-pending { background: #fef3c7; color: #92400e; }
+        .badge-allocated { background: #dcfce7; color: #166534; }
+        .badge-waitlisted { background: #e0f2fe; color: #0369a1; }
+        .badge-rejected { background: #fee2e2; color: #991b1b; }
+        .text-muted { color: #94a3b8; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>📋 Student Accommodation Applications</h2>
+        <a href="{% url 'officer_dashboard' %}">← Back to Dashboard</a>
+    </div>
+
+    <div class="container">
+        <div class="section-box">
+            
+            <!-- Search & Filter Form -->
+            <form method="GET" action="{% url 'view_applications' %}" class="filter-bar">
+                <div class="filter-group">
+                    <input type="text" name="q" value="{{ search_query }}" placeholder="Search Reg No or Name...">
+                    <select name="status">
+                        <option value="">-- All Statuses --</option>
+                        <option value="Pending" {% if selected_status == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="Allocated" {% if selected_status == 'Allocated' %}selected{% endif %}>Allocated</option>
+                        <option value="Waitlisted" {% if selected_status == 'Waitlisted' %}selected{% endif %}>Waitlisted</option>
+                        <option value="Rejected" {% if selected_status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                    <button type="submit" class="btn-search">Filter</button>
+                </div>
+                <div>
+                    <strong>Total Results:</strong> {{ total_applications_count }}
+                </div>
+            </form>
+
+            <!-- Applications Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>App ID</th>
+                        <th>Student Name</th>
+                        <th>Reg Number</th>
+                        <th>Preferred Hall</th>
+                        <th>Preferred Room Type</th>
+                        <th>Preferred Roommate</th>
+                        <th>Assigned Room</th>
+                        <th>Submission Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in applications %}
+                    <tr>
+                        <td>#{{ app.application_id }}</td>
+                        <td style="font-weight: 600;">{{ app.student.full_name }}</td>
+                        <td>{{ app.student.reg_number }}</td>
+                        
+                        <!-- Preferred Hall -->
+                        <td>{{ app.preferred_hall|default:"Any Hall" }}</td>
+                        
+                        <!-- Preferred Room Type -->
+                        <td>{{ app.preferred_room_type|default:"None" }}</td>
+                        
+                        <!-- Preferred Roommate Column -->
+                        <td>
+                            {% if app.preferred_roommate %}
+                                {{ app.preferred_roommate.full_name }} ({{ app.preferred_roommate.reg_number }})
+                            {% else %}
+                                <span class="text-muted">None</span>
+                            {% endif %}
+                        </td>
+                        
+                        <!-- Assigned Room Column -->
+                        <td>
+                            {% if app.allocation %}
+                                <strong>{{ app.allocation.room.hall.hall_name }}</strong> — Room {{ app.allocation.room.room_number }} ({{ app.allocation.room.room_type }})
+                            {% else %}
+                                <span class="text-muted">Not Allocated</span>
+                            {% endif %}
+                        </td>
+
+                        <td>{{ app.submission_date|date:"M d, Y H:i" }}</td>
+                        <td>
+                            {% if app.status == 'Allocated' or app.status == 'APPROVED' %}
+                                <span class="badge badge-allocated">Allocated / Approved ✅</span>
+                            {% elif app.status == 'Waitlisted' %}
+                                <span class="badge badge-waitlisted">Waitlisted ⏳</span>
+                            {% elif app.status == 'Rejected' %}
+                                <span class="badge badge-rejected">Rejected ❌</span>
+                            {% else %}
+                                <span class="badge badge-pending">{{ app.status }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="9">No accommodation applications found matching your criteria.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

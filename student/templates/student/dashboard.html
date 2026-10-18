@@ -1,0 +1,333 @@
+{% extends 'student/base.html' %}
+
+{% block title %}Dashboard - Student Hostel Portal{% endblock %}
+
+{% block content %}
+<style>
+    /* Dashboard specific overrides matching your custom styles */
+    .dashboard-grid { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px; 
+    }
+    @media (max-width: 900px) { 
+        .dashboard-grid { grid-template-columns: 1fr; } 
+    }
+
+    .card { 
+        background: #ffffff; 
+        border: 1px solid #e1e4e8; 
+        padding: 20px; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+        margin-bottom: 20px; 
+    }
+    .card h3 { 
+        margin-top: 0; 
+        color: #444; 
+        font-size: 18px; 
+        border-bottom: 1px solid #eee; 
+        padding-bottom: 8px; 
+        margin-bottom: 15px;
+    }
+    
+    .allocated { background: #e8f5e9; border-color: #c8e6c9; color: #1b5e20; }
+    .unallocated { background: #fff8e1; border-color: #ffe082; color: #795548; }
+    
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+    .badge-success { background: #d4edda; color: #155724; }
+    .badge-danger { background: #f8d7da; color: #721c24; }
+    .badge-warning { background: #fff3cd; color: #856404; }
+    .badge-info { background: #cce5ff; color: #004085; }
+
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 13px; color: #555; }
+    .form-group select, .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+    
+    .save-btn { background: #16a34a; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.2s; font-size: 14px; }
+    .save-btn:hover { background: #15803d; }
+
+    .apply-btn { display: inline-block; background: #1e40af; color: white; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; margin-top: 15px; text-align: center; width: 100%; box-sizing: border-box; transition: background 0.2s; }
+    .apply-btn:hover { background: #1d4ed8; }
+
+    .notice-board { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 6px; margin-bottom: 25px; }
+    .notice-board h4 { margin: 0 0 5px 0; color: #1e40af; font-size: 16px; }
+    .notice-board p { margin: 0; font-size: 14px; color: #334155; }
+
+    /* Django Messages Styling */
+    .messages { margin-bottom: 20px; }
+    .alert { padding: 12px 15px; border-radius: 6px; margin-bottom: 10px; font-size: 14px; font-weight: 500; }
+    .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .alert-warning { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+</style>
+
+<!-- Django Flash Messages Section -->
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if student %}
+    <!-- Dynamic Notice Board Announcement -->
+    {% if announcement %}
+    <div class="notice-board">
+        <h4>📢 {{ announcement.title }}</h4>
+        <p>Welcome back, <strong>{{ student.full_name }}</strong>! {{ announcement.message }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Confirm Allocation Action Banner with Live Countdown Timer -->
+    {% if allocation and allocation.status|lower == 'pending' %}
+        <div style="background: #fef3c7; border: 1px solid #f59e0b; padding: 15px; border-radius: 6px; margin-bottom: 25px;">
+            <h4 style="color: #92400e; margin: 0 0 5px 0;">Action Required: Pending Allocation</h4>
+            <p style="color: #b45309; margin: 0 0 8px 0; font-size: 14px;">
+                Confirm your room before deadline expires: <strong id="countdown" style="font-family: monospace;">Loading...</strong>
+            </p>
+            <a href="{% url 'confirm_allocation' %}" style="background: #d97706; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-block;">Confirm Room Now ✅</a>
+        </div>
+
+        <script>
+            const deadline = new Date("{{ allocation.confirmation_deadline|date:'Y-m-d H:i:s' }}").getTime();
+            
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = deadline - now;
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                let timeString = "";
+                if (days > 0) timeString += days + "d ";
+                timeString += hours + "h " + minutes + "m " + seconds + "s remaining";
+                
+                document.getElementById("countdown").innerHTML = timeString;
+            }, 1000);
+        </script>
+    {% endif %}
+
+    <div class="dashboard-grid">
+        <!-- Left Column: Profile Details & Edit Form -->
+        <div>
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <!-- Circular Avatar Badge -->
+                    {% if student.profile_picture %}
+                        <img src="{{ student.profile_picture.url }}" alt="Profile" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #3b82f6; cursor: pointer;" title="Click to edit profile" onclick="document.getElementById('update-profile-card').scrollIntoView({behavior: 'smooth'});">
+                    {% else %}
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background-color: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; cursor: pointer;" title="Click to edit profile" onclick="document.getElementById('update-profile-card').scrollIntoView({behavior: 'smooth'});">
+                            {{ student.full_name|slice:":2"|upper }}
+                        </div>
+                    {% endif %}
+                    <div>
+                        <h3 style="margin: 0; border: none; padding: 0; font-size: 18px;">{{ student.full_name }}</h3>
+                        <span style="font-size: 13px; color: #666;">Student Profile</span>
+                    </div>
+                </div>
+
+                <p style="margin-bottom: 10px;"><strong>Registration Number:</strong> {{ student.reg_number }}</p>
+                <p style="margin-bottom: 10px;"><strong>Gender:</strong> {{ student.gender|title }}</p>
+                <p style="margin-bottom: 10px;"><strong>Year of Study:</strong> Year {{ student.year_of_study }}</p>
+                <p style="margin-bottom: 10px;"><strong>Home Distance:</strong> {{ student.home_distance }} km</p>
+                <p style="margin-bottom: 0;"><strong>Fee Clearance:</strong> 
+                    {% if student.fee_clearance %}
+                        <span class="badge badge-success">Cleared ✅</span>
+                    {% else %}
+                        <span class="badge badge-danger">Not Cleared ❌</span>
+                    {% endif %}
+                </p>
+            </div>
+
+            <!-- Profile Update Form Card -->
+            <div class="card" id="update-profile-card">
+                <h3>Update Profile Info</h3>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Room Allocation, Application & Transfer Requests -->
+        <div id="room-section">
+            <div class="card {% if allocation %}allocated{% else %}unallocated{% endif %}">
+                <h3>Room Allocation Status</h3>
+                
+                {% if allocation %}
+                    <!-- Scenario A: Room assigned by engine -->
+                    <p>Status: <strong class="badge badge-success">{{ allocation.status|title }} 🎉</strong></p>
+                    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <p style="margin-bottom: 10px;"><strong>Hostel Hall:</strong> {{ allocation.room.hall.hall_name }}</p>
+                    <p style="margin-bottom: 10px;"><strong>Room Number:</strong> <span style="font-size: 16px; font-weight: bold; color: #1e40af;">Room {{ allocation.room.room_number }}</span></p>
+                    <p style="margin-bottom: 10px;"><strong>Room Type:</strong> {{ allocation.room.room_type|title }}</p>
+                    <p style="margin-bottom: 10px;"><strong>Bed Capacity:</strong> {{ allocation.room.bed_capacity }} Person(s)</p>
+                    <p style="margin-bottom: 10px;"><strong>Confirmation Deadline:</strong> {{ allocation.confirmation_deadline|date:"M d, Y H:i" }}</p>
+                    <p style="margin-bottom: 0;"><strong>Allocated On:</strong> {{ allocation.timestamp }}</p>
+
+                {% elif application and application.status|upper == 'REMOVED' %}
+                    <!-- Scenario B1: Student removed from waiting list by officer (Prioritized above waitlist_entry) -->
+                    <p>Status: <span class="badge badge-danger">REMOVED FROM WAITLIST 🚫</span></p>
+                    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 12px 15px; border-radius: 4px; margin-bottom: 15px;">
+                        <h4 style="margin: 0 0 5px 0; color: #991b1b; font-size: 15px;">Request Removed</h4>
+                        <p style="margin: 0; font-size: 13px; color: #7f1d1d; line-height: 1.5;">
+                            Your hostel application has been removed from the waiting list by the accommodation office.
+                        </p>
+                    </div>
+                    <p style="font-size: 13px; margin-top: 12px; color: #555; line-height: 1.4;">
+                        If you would like to re-apply for room allocation, please submit a new application below:
+                    </p>
+                    <!-- 🚀 Re-submit Button for Removed Waitlist Students -->
+                    <a href="{% url 'apply_room' %}" class="apply-btn" style="background: #2563eb;">
+                        Re-submit Room Application 🚀
+                    </a>
+
+                {% elif application and application.status|upper == 'INELIGIBLE' %}
+                    <!-- Scenario B2: Application deemed INELIGIBLE -->
+                    <p>Status: <span class="badge badge-danger">INELIGIBLE ⚠️</span></p>
+                    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <div style="background: #fdf2f2; border-left: 4px solid #ef4444; padding: 12px 15px; border-radius: 4px;">
+                        <h4 style="margin: 0 0 5px 0; color: #991b1b; font-size: 15px;">Application Could Not Be Processed</h4>
+                        <p style="margin: 0; font-size: 13px; color: #7f1d1d; line-height: 1.5;">
+                            <strong>Reason:</strong> {{ application.get_ineligibility_reason|default:"Your application does not currently meet hostel eligibility requirements." }}
+                        </p>
+                    </div>
+                    <p style="font-size: 13px; margin-top: 12px; color: #555; line-height: 1.4;">
+                        Please resolve your outstanding fee balance or disciplinary issues with the administration and update your application.
+                    </p>
+
+                {% elif application and application.status|upper == 'DRAFT' %}
+                    <!-- Scenario B3: Application Cleared / Reset to Draft -->
+                    <p>Status: <span class="badge badge-info">READY TO APPLY 📝</span></p>
+                    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <div style="background: #f0f9ff; border-left: 4px solid #0284c7; padding: 12px 15px; border-radius: 4px;">
+                        <h4 style="margin: 0 0 5px 0; color: #0369a1; font-size: 15px;">Application Cleared for Re-submission</h4>
+                        <p style="margin: 0; font-size: 13px; color: #0c4a6e; line-height: 1.5;">
+                            Your application hold has been cleared by the Accommodation Office. You may now re-submit your hostel request.
+                        </p>
+                    </div>
+                    <a href="{% url 'apply_room' %}" class="apply-btn">Submit Hostel Application 🚀</a>
+
+                {% elif waitlist_entry %}
+                    <!-- Scenario C: Student is currently on the active waiting list -->
+                    <p>Status: <span class="badge badge-warning">WAITLISTED ⏳</span></p>
+                    <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                    <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 15px; border-radius: 4px; margin-bottom: 15px;">
+                        <h4 style="margin: 0 0 5px 0; color: #92400e; font-size: 15px;">Official Waiting List Queue</h4>
+                        <p style="margin: 0; font-size: 13px; color: #b45309; line-height: 1.5;">
+                            All standard rooms matching your criteria are currently occupied. You have been placed on the priority waiting list.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 12px;">
+                        <span style="background: white; padding: 8px 12px; border-radius: 6px; font-weight: 600; color: #0369a1; border: 1px solid #bae6fd; font-size: 13px;">
+                            ⭐ Priority Score: {{ waitlist_entry.priority_score }} pts
+                        </span>
+                        <span style="background: white; padding: 8px 12px; border-radius: 6px; font-weight: 600; color: #92400e; border: 1px solid #fde68a; font-size: 13px;">
+                            📊 Queue Position: #{{ waitlist_position }}
+                        </span>
+                    </div>
+
+                {% elif application %}
+                    <!-- Scenario D: Other general application statuses -->
+                    {% if application.status|upper == 'WAITLISTED' %}
+                        <p>Status: <span class="badge badge-warning">WAITLISTED ⏳</span></p>
+                        <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                        <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 15px; border-radius: 4px;">
+                            <h4 style="margin: 0 0 5px 0; color: #92400e; font-size: 15px;">Placed on Priority Waiting List</h4>
+                            <p style="margin: 0; font-size: 13px; color: #b45309; line-height: 1.5;">
+                                Your application met eligibility requirements, but all matching gender-compatible rooms are currently full.
+                            </p>
+                        </div>
+                    {% else %}
+                        <p>Status: <span class="badge badge-info">Application {{ application.status }} 📋</span></p>
+                        <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
+                        <p style="margin-bottom: 10px;"><strong>Preferred Hall:</strong> {{ application.preferred_hall }}</p>
+                        {% if application.preferred_room_type %}
+                            <p style="margin-bottom: 10px;"><strong>Preferred Room Type:</strong> {{ application.preferred_room_type }}</p>
+                        {% endif %}
+                        <p style="margin-bottom: 10px;"><strong>Submission Date:</strong> {{ application.submission_date }}</p>
+                        <p style="font-size: 13px; margin-top: 10px; color: #555; line-height: 1.4;">
+                            Your application has been received and is waiting for automated allocation by the administrator.
+                        </p>
+                    {% endif %}
+
+                {% else %}
+                    <!-- Scenario E: No application submitted yet -->
+                    <p>Status: <strong>No room allocated yet.</strong></p>
+                    <p style="font-size: 13px; margin-top: 10px; line-height: 1.4;">Click below to submit your room application and enter the allocation pool.</p>
+                    <a href="{% url 'apply_room' %}" class="apply-btn">Apply for Room Now 🚀</a>
+                {% endif %}
+            </div>
+
+            <!-- Transfer Requests Card -->
+            <div class="card">
+                <h3>My Transfer Requests</h3>
+                
+                {% if transfer_requests %}
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #eee; text-align: left; color: #555;">
+                                    <th style="padding: 8px;">Requested Preference</th>
+                                    <th style="padding: 8px;">Reason</th>
+                                    <th style="padding: 8px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for req in transfer_requests %}
+                                <tr style="border-bottom: 1px solid #f2f2f2;">
+                                    <td style="padding: 10px 8px;">{{ req.requested_preference }}</td>
+                                    <td style="padding: 10px 8px; color: #666;">{{ req.reason|default:"No reason provided" }}</td>
+                                    <td style="padding: 10px 8px;">
+                                        {% if req.status == 'Approved' %}
+                                            <span class="badge badge-success">Approved ✅</span>
+                                        {% elif req.status == 'Declined' or req.status == 'Rejected' %}
+                                            <span class="badge badge-danger">Rejected ❌</span>
+                                        {% elif req.status == 'Under Review' %}
+                                            <span class="badge" style="background: #fef3c7; color: #92400e;">Under Review 🔍</span>
+                                        {% else %}
+                                            <span class="badge badge-info">Submitted 📋</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p style="color: #666; font-size: 14px; margin: 0;">You have not submitted any room transfer requests yet.</p>
+                {% endif %}
+                
+                {% if allocation %}
+                    <a href="{% url 'request_transfer' %}" class="apply-btn" style="background: #7c3aed; margin-top: 15px;">Request Room Transfer 🔄</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="card" style="background: #f8d7da; color: #721c24;">
+        <h3>Account Error</h3>
+        <p>No student profile is linked to your login username (<strong>{{ request.user.username }}</strong>). Please contact the hostel administrator.</p>
+    </div>
+{% endif %}
+
+{% endblock %}

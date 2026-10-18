@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caretaker Portal - {{ assigned_hall.hall_name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-building"></i> Kisii University Hostel - Caretaker Portal</a>
+            <div class="d-flex text-white align-items-center">
+                <span class="me-3"><i class="bi bi-person-badge"></i> {{ caretaker.name }} (Hall: {{ assigned_hall.hall_name }})</span>
+                <form action="{% url 'logout' %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-light btn-sm">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        
+        <!-- Hall Overview Cards -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-primary h-100">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h6 class="text-muted">Assigned Hall</h6>
+                            <h3>{{ assigned_hall.hall_name }}</h3>
+                            <p class="mb-2 text-secondary">Policy: {{ assigned_hall.gender_policy }} | Capacity: {{ assigned_hall.total_capacity }}</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'hall_room_list' %}" class="btn btn-sm btn-outline-primary w-100 mt-2">
+                                <i class="bi bi-door-open-fill"></i> View Detailed Room Inventory
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-warning h-100">
+                    <div class="card-body">
+                        <h6 class="text-muted">Pending Check-Ins</h6>
+                        <h3>{{ pending_checkins.count }}</h3>
+                        <p class="mb-0 text-secondary">Awaiting physical key pickup</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-danger h-100">
+                    <div class="card-body">
+                        <h6 class="text-muted">Open Maintenance Repairs</h6>
+                        <h3>{{ open_repairs.count }}</h3>
+                        <p class="mb-0 text-secondary">Reported room defects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Bar -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4>Hall Operations & Management</h4>
+            <div>
+                <a href="{% url 'gate_scanner' %}" class="btn btn-success shadow-sm me-2">
+                    <i class="bi bi-qr-code-scan"></i> Open Gate Scanner
+                </a>
+                <a href="{% url 'log_room_defect' %}" class="btn btn-primary shadow-sm">
+                    <i class="bi bi-tools"></i> Log Room Defect
+                </a>
+            </div>
+        </div>
+
+        <!-- Pending Check-Ins Table -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-warning text-dark fw-bold">
+                <i class="bi bi-clock-history"></i> Pending Student Check-Ins
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Reg Number</th>
+                                <th>Room Number</th>
+                                <th>Allocation Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for alloc in pending_checkins %}
+                            <tr>
+                                <td>{{ alloc.application.student.full_name }}</td>
+                                <td><code>{{ alloc.application.student.reg_number }}</code></td>
+                                <td>Room {{ alloc.room.room_number }}</td>
+                                <td><span class="badge bg-warning text-dark">{{ alloc.status }}</span></td>
+                                <td>
+                                    <a href="{% url 'process_physical_checkin' alloc.allocation_id %}" class="btn btn-sm btn-success">
+                                        <i class="bi bi-key-fill"></i> Process Check-In
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted py-3">No pending check-ins found for this hall.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Residents / Semester Check-Out Table -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-info text-dark fw-bold">
+                <i class="bi bi-people-fill"></i> Current Active Residents (Semester Check-Out & Clearance)
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Reg Number</th>
+                                <th>Room Number</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for resident in active_residents %}
+                            <tr>
+                                <td>{{ resident.student.full_name }}</td>
+                                <td><code>{{ resident.student.reg_number }}</code></td>
+                                <td>Room {{ resident.room.room_number }}</td>
+                                <td><span class="badge bg-success">{{ resident.status }}</span></td>
+                                <td>
+                                    <a href="{% url 'process_checkout' resident.allocation_id %}" class="btn btn-sm btn-outline-dark">
+                                        <i class="bi bi-box-arrow-right"></i> Process Check-Out
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted py-3">No active residents currently checked into this hall.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open Maintenance Repairs Table -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-danger text-white fw-bold">
+                <i class="bi bi-exclamation-triangle-fill"></i> Open Maintenance & Room Defects
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>Log ID</th>
+                                <th>Room</th>
+                                <th>Description</th>
+                                <th>Severity</th>
+                                <th>Reported Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for repair in open_repairs %}
+                            <tr>
+                                <td>#{{ repair.log_id }}</td>
+                                <td>Room {{ repair.room.room_number }}</td>
+                                <td>{{ repair.description }}</td>
+                                <td>
+                                    <span class="badge {% if repair.severity == 'Severe' or repair.severity == 'High' %}bg-danger{% else %}bg-secondary{% endif %}">
+                                        {{ repair.severity }}
+                                    </span>
+                                </td>
+                                <td>{{ repair.reported_date }}</td>
+                                <td><span class="badge bg-warning text-dark">{{ repair.repair_status }}</span></td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-3">No active maintenance reports for this hall.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

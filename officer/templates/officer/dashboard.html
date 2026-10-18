@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accommodation Officer Portal - Kisii University</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; color: #1e293b; }
+        
+        /* Header & Multi-Row Navigation Layout */
+        .header { background: #1e3a8a; color: white; padding: 20px 30px; display: flex; flex-direction: column; gap: 15px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-container { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: rgba(0, 0, 0, 0.15); padding: 10px 15px; border-radius: 8px; }
+        .nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 13px; background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 6px; transition: background 0.2s; }
+        .nav-link:hover { background: rgba(255,255,255,0.3); }
+        .staff-badge { font-size: 13px; font-weight: 600; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 6px; }
+
+        .container { padding: 30px; max-width: 1400px; margin: 0 auto; }
+        .action-bar { margin-bottom: 25px; display: flex; justify-content: flex-end; }
+        .btn-allocate { background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: background 0.2s; }
+        .btn-allocate:hover { background: #1d4ed8; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .metric-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #3b82f6; }
+        .metric-card h3 { font-size: 13px; color: #64748b; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
+        .metric-card .number { font-size: 28px; font-weight: 700; color: #0f172a; }
+        .section-box { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .section-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; }
+        .section-header-flex h2 { font-size: 18px; color: #1e3a8a; margin: 0; border: none; padding: 0; }
+        .btn-view-all { font-size: 13px; font-weight: 600; color: #2563eb; text-decoration: none; background: #eff6ff; padding: 6px 14px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; }
+        .btn-view-all:hover { background: #dbeafe; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        th { background: #f8fafc; color: #475569; font-weight: 600; }
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; }
+        .badge-pending { background: #fef3c7; color: #92400e; }
+        .badge-free { background: #dcfce7; color: #166534; }
+        .badge-success { background: #d4edda; color: #155724; }
+        .badge-danger { background: #f8d7da; color: #721c24; }
+        .btn-action { padding: 6px 12px; border: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; color: white; }
+        .btn-approve { background: #16a34a; }
+        .btn-approve:hover { background: #15803d; }
+        .btn-reject { background: #dc2626; }
+        .btn-reject:hover { background: #b91c1c; }
+        .btn-qr { background: #2563eb; color: white; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn-qr:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-top">
+            <h2>🏛️ Kisii University - Accommodation Officer Portal</h2>
+            <span class="staff-badge">Staff Member Session</span>
+        </div>
+        <div class="nav-container">
+            <a href="{% url 'officer_dashboard' %}" class="nav-link">🏠 Dashboard</a>
+            <a href="{% url 'view_applications' %}" class="nav-link">📋 Applications</a>
+            <a href="{% url 'view_transfers' %}" class="nav-link">🔄 Transfers</a>
+            <a href="{% url 'view_waiting_list' %}" class="nav-link">⏳ Waiting List</a>
+            <a href="{% url 'room_occupancy_inspector' %}" class="nav-link">🔍 Room Inspector</a>
+            <a href="{% url 'view_reports' %}" class="nav-link">📊 Reports</a>
+            <a href="{% url 'manage_students' %}" class="nav-link">🎓 Students</a>
+            <a href="{% url 'occupancy_analytics' %}" class="nav-link">📈 Analytics</a>
+            <a href="{% url 'view_maintenance_logs' %}" class="nav-link">🛠️ Maintenance</a>
+            <a href="{% url 'broadcast_notifications' %}" class="nav-link">📢 Broadcasts</a>
+            <a href="{% url 'gate_audit_trail' %}" class="nav-link">🚪 Gate Logs</a>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- Action Bar: Trigger Automated Room Allocations -->
+        <div class="action-bar">
+            <form action="{% url 'execute_allocations' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn-allocate">
+                    ⚡ Run Automated Room Allocations
+                </button>
+            </form>
+        </div>
+
+        <!-- Top Metrics Row (5 Summary Cards) -->
+        <div class="metrics-grid">
+            <div class="metric-card" style="border-left-color: #2563eb;">
+                <h3>Unallocated Students</h3>
+                <div class="number">{{ unallocated_count }}</div>
+            </div>
+            <a href="{% url 'view_waiting_list' %}" style="text-decoration: none; color: inherit;">
+                <div class="metric-card" style="border-left-color: #8b5cf6;">
+                    <h3>Waitlisted Students</h3>
+                    <div class="number">{{ waitlisted_count }}</div>
+                </div>
+            </a>
+            <div class="metric-card" style="border-left-color: #f59e0b;">
+                <h3>Unconfirmed Allocations</h3>
+                <div class="number">{{ unconfirmed_count }}</div>
+            </div>
+            <div class="metric-card" style="border-left-color: #10b981;">
+                <h3>Pending Transfer Requests</h3>
+                <div class="number">{{ pending_transfers_count }}</div>
+            </div>
+            <div class="metric-card" style="border-left-color: #ef4444;">
+                <h3>Ineligible Applications</h3>
+                <div class="number">{{ ineligible_count }}</div>
+            </div>
+        </div>
+
+        <!-- Quick Waitlist Preview Section -->
+        <div class="section-box" style="border-top: 4px solid #8b5cf6;">
+            <div class="section-header-flex">
+                <h2 style="color: #6d28d9;">⏳ Top Waitlisted Students (Queue Preview)</h2>
+                <a href="{% url 'view_waiting_list' %}" class="btn-view-all">View Full Waiting List →</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Queue Position</th>
+                        <th>Student Name</th>
+                        <th>Reg Number</th>
+                        <th>Gender</th>
+                        <th>Priority Score</th>
+                        <th>Entry Timestamp</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in waitlisted_preview %}
+                    <tr>
+                        <td><strong>#{{ forloop.counter }}</strong></td>
+                        <td style="font-weight: 600;">{{ item.student.full_name }}</td>
+                        <td><code>{{ item.student.reg_number }}</code></td>
+                        <td>{{ item.student.gender }}</td>
+                        <td>
+                            <span class="badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700;">
+                                ⭐ {{ item.priority_score }} pts
+                            </span>
+                        </td>
+                        <td>{{ item.entry_timestamp|date:"M d, Y H:i" }}</td>
+                        <td>
+                            <div style="display: flex; gap: 6px;">
+                                <form action="{% url 'promote_from_waitlist' item.queue_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-action btn-approve" onclick="return confirm('Promote {{ item.student.full_name }}?')">⚡ Promote</button>
+                                </form>
+                                <form action="{% url 'remove_from_waitlist' item.queue_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-action btn-reject" onclick="return confirm('Remove {{ item.student.full_name }} from waiting list?')">❌ Remove</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" style="padding: 20px; color: #64748b; text-align: center;">No students currently on the waiting list.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Hall Capacity & Bed Occupancy Overview -->
+        <div class="section-box">
+            <div class="section-header-flex">
+                <h2>🏢 Hall Capacity & Bed Occupancy Overview</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hall Name</th>
+                        <th>Gender Policy</th>
+                        <th>Total Rooms</th>
+                        <th>Total Bed Capacity</th>
+                        <th>Occupied Beds</th>
+                        <th>Available Beds</th>
+                        <th>Occupancy Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in hall_metrics %}
+                    <tr>
+                        <td><strong>{{ item.hall.hall_name }}</strong></td>
+                        <td>{{ item.hall.gender_policy }}</td>
+                        <td>{{ item.total_count }} Room(s)</td>
+                        <td><strong>{{ item.total_beds }} Bed(s)</strong></td>
+                        <td style="color: #dc2626; font-weight: 600;">{{ item.occupied_beds }} Occupied</td>
+                        <td style="color: #16a34a; font-weight: 600;">{{ item.available_beds }} Free Space(s)</td>
+                        <td>
+                            {% if item.hall_status == 'Fully Occupied' %}
+                                <span class="badge badge-danger">Fully Occupied 🔴</span>
+                            {% elif item.hall_status == 'Partially Occupied' %}
+                                <span class="badge badge-pending">Partially Occupied 🟡</span>
+                            {% elif item.hall_status == 'Fully Available' %}
+                                <span class="badge badge-free">Fully Available 🟢</span>
+                            {% else %}
+                                <span class="badge" style="background: #e2e8f0; color: #475569;">No Beds Configured</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="7">No halls configured yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Confirmed Room Occupants (Housed Students) -->
+        <div class="section-box">
+            <div class="section-header-flex">
+                <h2>🏢 Confirmed Room Occupants (Housed Students)</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Reg Number</th>
+                        <th>Hall Name</th>
+                        <th>Room Number</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alloc in confirmed_allocations %}
+                    <tr>
+                        <td style="font-weight: 600;">{{ alloc.application.student.full_name }}</td>
+                        <td style="color: #555;">{{ alloc.application.student.reg_number }}</td>
+                        <td>{{ alloc.room.hall.hall_name }}</td>
+                        <td>Room {{ alloc.room.room_number }}</td>
+                        <td>
+                            <span class="badge badge-success">Confirmed ✅</span>
+                        </td>
+                        <td>
+                            <a href="{% url 'digital_clearance_pass' alloc.allocation_id %}" target="_blank" class="btn-qr">
+                                🎫 QR Pass
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="6">No confirmed room occupants found yet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pending Room Allocations (Awaiting Student Confirmation) -->
+        <div class="section-box">
+            <div class="section-header-flex">
+                <h2>⏳ Pending Room Allocations (Awaiting Student Confirmation)</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Allocation ID</th>
+                        <th>Student Reg No.</th>
+                        <th>Assigned Room</th>
+                        <th>Confirmation Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alloc in unconfirmed_allocations %}
+                    <tr>
+                        <td>#{{ alloc.allocation_id }}</td>
+                        <td>{{ alloc.application.student.reg_number }}</td>
+                        <td>{{ alloc.room.hall.hall_name }} Room {{ alloc.room.room_number }}</td>
+                        <td>{{ alloc.confirmation_deadline|date:"M d, Y H:i" }}</td>
+                        <td><span class="badge badge-pending">{{ alloc.status }}</span></td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5">No pending unconfirmed allocations right now.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Ineligible / Rejected Applications Section -->
+        <div class="section-box" style="border-top: 4px solid #ef4444;">
+            <div class="section-header-flex">
+                <h2 style="color: #991b1b;">❌ Ineligible / Rejected Applications</h2>
+                <a href="{% url 'view_applications' %}" class="btn-view-all">View All Applications →</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Reg No.</th>
+                        <th>Student Name</th>
+                        <th>Year</th>
+                        <th>Rejection Reason</th>
+                        <th>Fee Status</th>
+                        <th>Disciplinary Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in ineligible_applications %}
+                    <tr>
+                        <td style="font-weight: 600;">{{ app.student.reg_number }}</td>
+                        <td>{{ app.student.full_name }}</td>
+                        <td>Year {{ app.student.year_of_study }}</td>
+                        <td style="color: #dc2626; font-weight: 500;">{{ app.get_ineligibility_reason }}</td>
+                        <td>
+                            {% if app.student.fee_clearance %}
+                                <span class="badge badge-success">Cleared</span>
+                            {% else %}
+                                <span class="badge badge-danger">Fee Pending</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if app.student.disciplinary_status %}
+                                <span class="badge badge-danger">Flagged</span>
+                            {% else %}
+                                <span class="badge badge-success">Clean</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <form action="{% url 'clear_ineligible_application' app.application_id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-action btn-approve" onclick="return confirm('Clear ineligible status for {{ app.student.full_name }}?')">Clear / Reset ✅</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="7">No ineligible applications recorded.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pending Transfer Requests Section -->
+        <div class="section-box">
+            <div class="section-header-flex">
+                <h2>🔄 Pending Transfer Requests</h2>
+                <a href="{% url 'view_transfers' %}" class="btn-view-all">View All Transfers →</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Reg No.</th>
+                        <th>Current Room</th>
+                        <th>Requested Preference</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for req in pending_transfers %}
+                    <tr>
+                        <td style="font-weight: 600;">{{ req.student.reg_number }}</td>
+                        <td>
+                            {% with active_app=req.student.applications.first %}
+                                {% if active_app and active_app.allocation_set.first %}
+                                    {{ active_app.allocation_set.first.room.hall.hall_name }} Room {{ active_app.allocation_set.first.room.room_number }}
+                                {% else %}
+                                    Not Assigned
+                                {% endif %}
+                            {% endwith %}
+                        </td>
+                        <td><strong>{{ req.requested_preference }}</strong></td>
+                        <td style="color: #666;">{{ req.reason|default:"No reason provided" }}</td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <form action="{% url 'approve_transfer' req.request_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-action btn-approve" onclick="return confirm('Approve transfer request?')">Approve</button>
+                                </form>
+                                <form action="{% url 'reject_transfer' req.request_id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-action btn-reject" onclick="return confirm('Reject transfer request?')">Reject</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5">No pending transfer requests at the moment.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- System Maintenance & Rollover (Danger Zone) -->
+        <div class="section-box" style="border-top: 4px solid #ef4444; margin-top: 40px;">
+            <h2 style="color: #b91c1c;">⚠️ System Maintenance & Rollover</h2>
+            <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">
+                Clear all current applications, allocations, transfer requests, and waitlists. All rooms will be marked back as available for the next cycle.
+            </p>
+            <form action="{% url 'reset_system' %}" method="POST" onsubmit="return confirm('WARNING: Are you sure you want to wipe all records? This cannot be undone!');">
+                {% csrf_token %}
+                <button type="submit" style="background: #dc2626; color: white; border: none; padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer;">
+                    🗑️ Reset System & Clear Database
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
