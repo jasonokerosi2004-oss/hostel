@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 from student import views as student_views
 
 urlpatterns = [
+    # Root URL path: Loads the login page directly when visiting the homepage
+    path('', auth_views.LoginView.as_view(template_name='student/login.html'), name='home_login'),
+
     path('admin/', admin.site.urls),
     
     # Authentication routes
