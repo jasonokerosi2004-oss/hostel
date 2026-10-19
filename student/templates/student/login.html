@@ -155,6 +155,32 @@
             background-color: #fff;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
         }
+        
+        /* Password wrapper and toggle button styling */
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-container input {
+            width: 100%;
+            padding-right: 50px;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px;
+        }
+        .toggle-password:hover {
+            color: #1e40af;
+        }
+
         .form-actions {
             display: flex;
             justify-content: space-between;
@@ -273,14 +299,15 @@
                 
                 <div class="form-group">
                     <label for="id_username">Username</label>
-                    <!-- Added mobile keyboard safety attributes -->
                     <input type="text" name="username" id="id_username" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="username" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="id_password">Password</label>
-                    <!-- Added mobile keyboard safety attributes to prevent accidental capitalization/spaces -->
-                    <input type="password" name="password" id="id_password" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="current-password" required>
+                    <div class="password-container">
+                        <input type="password" name="password" id="id_password" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="current-password" required>
+                        <button type="button" id="togglePasswordBtn" class="toggle-password" onclick="togglePasswordVisibility()">Show</button>
+                    </div>
                 </div>
 
                 <div class="form-actions">
@@ -288,7 +315,7 @@
                         <input type="checkbox" name="remember"> Remember me
                     </label>
                     <div class="forgot-password">
-                        <a href="#">Forgot Password?</a>
+                        <a href="{% url 'password_reset' %}">Forgot Password?</a>
                     </div>
                 </div>
                 
@@ -296,10 +323,26 @@
             </form>
 
             <div class="signup-link">
-                Don't have an account? <a href="#">Sign Up</a>
+                Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for Show/Hide Password Toggle -->
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('id_password');
+            const toggleBtn = document.getElementById('togglePasswordBtn');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = 'Show';
+            }
+        }
+    </script>
 
 </body>
 </html>

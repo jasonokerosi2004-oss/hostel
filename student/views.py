@@ -224,12 +224,22 @@ def signup_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Automatically create a linked Student profile if your model requires it
-            # Student.objects.get_or_create(user=user)
+            
+            # ✨ Automatically create and link a Student profile for the new user
+            Student.objects.get_or_create(
+                user=user,
+                defaults={
+                    'full_name': user.username,
+                    'reg_number': f"REG/{user.username.upper()}"
+                }
+            )
+            
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}! You can now log in.')
-            return redirect('/accounts/login/')  # Redirects back to your login page
+            return redirect('login')  # Adjust if your login URL name is different
         else:
+            # 🔍 This prints validation errors to your local terminal/command prompt
+            print("SIGNUP FORM ERRORS:", form.errors)
             messages.error(request, "Please correct the errors in the form below.")
     else:
         form = UserCreationForm()

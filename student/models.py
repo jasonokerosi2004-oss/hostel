@@ -38,18 +38,18 @@ class Student(models.Model):
     
     student_id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    reg_number = models.CharField(max_length=50, unique=True)
-    full_name = models.CharField(max_length=150)
-    gender = models.CharField(max_length=10, choices=GENDER_CHOICES) 
-    year_of_study = models.IntegerField(choices=YEAR_CHOICES)
-    home_distance = models.FloatField()
+    reg_number = models.CharField(max_length=50, unique=True, null=True, blank=True)
+    full_name = models.CharField(max_length=150, null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES, null=True, blank=True) 
+    year_of_study = models.IntegerField(choices=YEAR_CHOICES, null=True, blank=True)
+    home_distance = models.FloatField(null=True, blank=True)
     fee_clearance = models.BooleanField(default=False)
     disciplinary_status = models.BooleanField(default=False)
     held_previous_semester = models.BooleanField(default=False)
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     
     def __str__(self):
-        return f"{self.full_name} ({self.reg_number})"
+        return f"{self.full_name or 'Unassigned'} ({self.reg_number or 'No Reg'})"
 
 class Announcement(models.Model):
     title = models.CharField(max_length=200)

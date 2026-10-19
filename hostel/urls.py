@@ -23,6 +23,17 @@ urlpatterns = [
     path('officer/', include('officer.urls')),
     path('caretaker/', include('caretaker.urls')),
     path('login-redirect/', student_views.custom_login_redirect, name='login_redirect'),
+    # 1. Enter email to request a reset link
+    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='student/password_reset.html'), name='password_reset'),
+    
+    # 2. Success message saying "Check your email"
+    path('password_reset/done/', auth_views.PasswordResetView.as_view(template_name='student/password_reset_done.html'), name='password_reset_done'),
+    
+    # 3. The link clicked from the email (enter new password)
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='student/password_reset_confirm.html'), name='password_reset_confirm'),
+    
+    # 4. Success message saying "Password changed successfully"
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='student/password_reset_complete.html'), name='password_reset_complete'),
 ]
 
 if settings.DEBUG:
