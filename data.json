@@ -1,0 +1,1356 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1009,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$MDft4iXomILg4lJxTUFn8Q$dBD9Pv+Gkp46NLYbTbzTD1XuLsqZtetrTCpjp1x366A=",
+    "last_login": "2026-10-19T09:24:40.295Z",
+    "is_superuser": true,
+    "username": "jason",
+    "first_name": "",
+    "last_name": "",
+    "email": "jasonokerosi2004@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-10-14T11:33:26.227Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2008,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$qBWIYE64HD5T1CVIeDIoDU$sNDSHLytJuRzY+aKzgSBzziCGRO3Kj2yYbvwDFTg6S4=",
+    "last_login": "2026-10-19T09:30:31.628Z",
+    "is_superuser": true,
+    "username": "accomodationofficer",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-10-14T14:49:31Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2009,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$D4BjT50cAFW6UqyZHCS3QY$ePHnTuXAjbVL+k+wzhln/edXXCG0Z0feM+IaIzbIIww=",
+    "last_login": "2026-10-18T19:09:32.176Z",
+    "is_superuser": false,
+    "username": "frank",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T14:53:21Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2010,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$sbLRRS4M60bfTIHnGWmpCz$tgp8BfN0JP+l0RKFYes/tYf0tbuIhDmNjwOdVRzctQ8=",
+    "last_login": "2026-10-16T12:05:52.943Z",
+    "is_superuser": false,
+    "username": "paul",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T14:55:22Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2011,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$9DA0wLpViyzt327Nktf2Kt$y/YYG8dtRsrhbnGiCTuUgwxuZZE3zjUHlLRremmxpYA=",
+    "last_login": "2026-10-15T10:28:34.009Z",
+    "is_superuser": false,
+    "username": "ogero",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T14:56:47Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2012,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$cZ4RMJM85Acy6DL8qfFZrl$6s+VFV8Qxk+7VoNpr60aeynxedz2b0nTnQSoNi+BAKs=",
+    "last_login": "2026-10-15T10:27:01.486Z",
+    "is_superuser": false,
+    "username": "sharon",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T14:59:06Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2013,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$x3kzc4176gm8NlLCCwISQG$8jf5fF9x9CodyyfBY7NrmhlcpXUg1yYYPP5lJwXEK3M=",
+    "last_login": "2026-10-15T17:52:38.150Z",
+    "is_superuser": false,
+    "username": "neema",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T15:00:29Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2014,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$jS8eM5cGn7z64kBLgKj0vI$pk3cGtNjVBTObWaGLXfsQvgWIyjE49hs7jb8+NoD3bA=",
+    "last_login": "2026-10-14T15:43:58.417Z",
+    "is_superuser": false,
+    "username": "susan",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T15:13:00Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2015,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$CwJI7UmLRyAew1ZLKkuvBH$Knq0s/GdvkFM56ZmI7f6A6Oz/lfA9bT1t50Z8saCKws=",
+    "last_login": "2026-10-16T08:12:11.831Z",
+    "is_superuser": false,
+    "username": "mercury",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:05:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2016,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$HyysDIKMQIcXxbOoLvY0YW$jXIM8Cekgm5M+QMyE8Ef+Mz1WtPTAbkVJVrQjd2FWF0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "venuscaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:08:31Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2017,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$Yq31BPfA9Wh39JwvuATK4H$AA0WJlj5OTLKyOoHZhHyM1JGr5YDTsibkccLNcjc+EE=",
+    "last_login": "2026-10-15T18:18:24.630Z",
+    "is_superuser": false,
+    "username": "earthcaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:09:39Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2018,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$2Y9v1BKbr7zkoOB1KSGqbC$RPNUv2QZX/iiDiPsRnPw3ZJKp6+U08oOyvARCfV+Xro=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "marscaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:11:06Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2019,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$4a6On8ZapW85o2rRxM8jXq$qGP5IaCH9g0W0dhC6mOSyu00YNbfSXGFDE1pDSemfmU=",
+    "last_login": "2026-10-18T19:23:05.288Z",
+    "is_superuser": false,
+    "username": "jupytercaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:12:22Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2020,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$EygLTYeDd2HfM2NlyzI8uR$QDkvqTPXsQhd5kaf98wlo+RsPfR8uGUajcTajCe9WdA=",
+    "last_login": "2026-10-15T08:50:44.984Z",
+    "is_superuser": false,
+    "username": "saturncaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:13:21Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2021,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$scBnm0aqg6RnjUMl0nBESQ$sm+F7q6oESxG8+4EymS/5MbktZJahy5GXWPnlsm33gw=",
+    "last_login": "2026-10-15T08:51:56.282Z",
+    "is_superuser": false,
+    "username": "neptunecaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:14:38Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2022,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$DPakE276tWqAPn7amOPzfg$8Yc+cuDfnZjiXe03jh2hmUfzDJ9XNXangBjpSXKWIK4=",
+    "last_login": "2026-10-15T08:52:19.052Z",
+    "is_superuser": false,
+    "username": "uranascaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:15:43Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2023,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$Jbr8sbojvIuhOsIF16nfXU$yT47OFkQceLImgzauxJEo2NZ+ptvwIDLEghB1n4A9Nw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "plutocaretaker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T08:16:27Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2024,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$FjzeeYNBz0xHoiR6if4JdN$zQRLSW6K65LnId6dMXXaDqYCZ46funSjQL89Ry6EGXg=",
+    "last_login": "2026-10-15T12:02:53.178Z",
+    "is_superuser": false,
+    "username": "peterkennedy",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T11:17:20Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2025,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$aL0U5czVbnSajDCw3MqmVW$Op1EizarYkGPyFH2SaXcWWg+48W5PbO71XFAHaPZs/E=",
+    "last_login": "2026-10-15T12:01:49.166Z",
+    "is_superuser": false,
+    "username": "frankline",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T11:19:20Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2026,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$XBB6mG4OGZapRIQlAoC00H$09xcXJ7lOUwDftcVFB3PoUwsbOKoOFER+TXk5V8efLg=",
+    "last_login": "2026-10-15T12:20:05.487Z",
+    "is_superuser": false,
+    "username": "jobneko",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T11:21:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2027,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$OcLufAFSCUgGqsGFTlReM1$YB9UpNtUr232sGHU9r7Ly6oJV3HBWWGAI+bTYodS5eI=",
+    "last_login": "2026-10-15T12:22:54.202Z",
+    "is_superuser": false,
+    "username": "petersonrooney",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T11:23:27Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2028,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$cvZyHa4W8aTLXwDauAlkSO$tIxXyT5FhOECMCKwrCEjU4MkUfU9EAwOfkz7lAs4izc=",
+    "last_login": "2026-10-15T13:18:46.657Z",
+    "is_superuser": false,
+    "username": "sharonbosibori",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T11:24:31Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2029,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$bRhjzSUFJnQcaXhsRGtTu0$sZn0k8gGsQoKmrlLLiWGRcsA+/OGO91v0J5Ss/qF/jk=",
+    "last_login": "2026-10-16T13:28:37.309Z",
+    "is_superuser": false,
+    "username": "david",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T13:23:26Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2030,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$O4l9mfPnvxKIuRtJt6yw9D$MlxJ2dc0b6tAvjhUVtmg7viZUeYHTPTTicyHKFI1KWM=",
+    "last_login": "2026-10-16T14:27:58.801Z",
+    "is_superuser": false,
+    "username": "barackgiel",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T13:39:32Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2031,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$e5Kk8Z9MhiKrRdT6js4GxW$T69Y2gc1fFDRAT9z1mFA+9Iq0TigjJ4jXpSzqlHQvtA=",
+    "last_login": "2026-10-15T14:00:50.123Z",
+    "is_superuser": false,
+    "username": "shareenmkonzo",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T13:40:45.511Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2032,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$ImR5gmg4g7rfBzqxSPmkdT$swPUqflk06g9OX47Kcb96WsKwjE2yUKmCVaLH/9yQro=",
+    "last_login": "2026-10-15T13:54:38.508Z",
+    "is_superuser": false,
+    "username": "wanyama",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T13:53:02Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2033,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$tGW7xoy99jMyBL0INbJ4lR$C70ahiBHuXKdydmgZlvVhMPhzyUx7EHGKcXDX3mxSaY=",
+    "last_login": "2026-10-15T18:12:28.426Z",
+    "is_superuser": false,
+    "username": "winie",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T17:58:49Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2034,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$gXOdXhQrTFBUkaukJGA4Pl$b4meZhMqQ+tc5nHIbE3XZ7AFkghegSh33W78cyc9uMo=",
+    "last_login": "2026-10-16T09:15:52.918Z",
+    "is_superuser": false,
+    "username": "eliz",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T18:00:54Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2035,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$QJKQQErbJevDtWFO6vZuYj$LAtSz56HTJw0R8K5Co5fbxgwwXRiu8NFzhOK6RZPiFA=",
+    "last_login": "2026-10-15T19:28:53.055Z",
+    "is_superuser": false,
+    "username": "meshack",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T18:26:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2036,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$05e3KpJNroZ5P7EdPfyWqA$O7TCEYmZK2KYo939R5dgArTVlEwMROKEywTrUA73zhM=",
+    "last_login": "2026-10-16T12:49:04.086Z",
+    "is_superuser": false,
+    "username": "waren",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T18:28:07Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2037,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$PVWqO3LTPh3zleaVLeKzBG$oUi5iIYUmIvETJNuw1hOszvwpVRpOV+44mb094RszAQ=",
+    "last_login": "2026-10-16T09:23:45.191Z",
+    "is_superuser": false,
+    "username": "caren",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T18:29:52Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2038,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$20XoVsiYXhU3HZuTUdU8wb$9w14elDGw0Nnv+bTzl3jed4i8CLQxhJK3DZZmda+4C4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Uphemia",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T19:05:36Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2039,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$TM3hMJTb8YXpxAVKExGB3u$sGZNP1yAi3m5EN5QfwFq9C0FTm9roybzavmT4/K0nwU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "quintie",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T19:06:58.053Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2040,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$4oGk300z1HEWmmfGsEmvu0$mbrJtEjT4MrSCBZT5+MKiKyK1ke3mqFay9Ba1MBw7jU=",
+    "last_login": "2026-10-15T19:20:16.578Z",
+    "is_superuser": false,
+    "username": "Phena",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T19:11:48Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2041,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$RpVfeYvSW6tnmmeCFbnT2q$Ik0GSws0SNusOObuEoVzwudqcI9Yis3yHqUdZ3oAG2A=",
+    "last_login": "2026-10-16T12:49:36.902Z",
+    "is_superuser": false,
+    "username": "justin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T19:14:52Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2042,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$ldp6DOiCaGiP4PywoWMH1f$Sho/YY80zAANopVA+uRAg97vpkP/P9T0GFjhqrCzOH4=",
+    "last_login": "2026-10-15T19:24:24.569Z",
+    "is_superuser": false,
+    "username": "jayson",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-15T19:19:15Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2043,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$jLkAVv8NAOSh2K8zXGz5YJ$TWPbOi2kxo8vgEPCgxccBQ3tKSuRnvWe358LRvr1S9U=",
+    "last_login": "2026-10-16T13:05:42.691Z",
+    "is_superuser": false,
+    "username": "stephen",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T10:17:25Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2044,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$hShrh0t11v8KuvhgzHgcY6$v7ZeGl074BfUYGIlRrGavxFCWWPvtlyF7hlSAzEBzK4=",
+    "last_login": "2026-10-16T13:01:57.643Z",
+    "is_superuser": false,
+    "username": "weeklif",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T10:18:09.434Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2045,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$OzquAPLf0Kmax4yLM2LmdH$18bvX1OvoK074LKaZEKxi4lL7qieTml04WQzUnrg+ck=",
+    "last_login": "2026-10-16T13:31:48.149Z",
+    "is_superuser": false,
+    "username": "mark",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T13:19:29Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2046,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$9KHUzRRML3NiZDp2swajEu$iz0/p4OaWU9s53ePFYDuWbPmUaOLav2hrWClq0aKwxE=",
+    "last_login": "2026-10-16T13:33:50.282Z",
+    "is_superuser": false,
+    "username": "elisha",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T13:20:12Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2047,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$HOc4B6dVR1jHDlOnegg7nm$kXdxzfnmVOHDV89/9EpiAFf6RBe3kC3Rc7OxqUwTInw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "milker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T13:34:59Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2048,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$8HbwhA2fxvtuX9Ia2uQ7w8$InoUToVg9FrfOlt/3QvZgSohFIwvERfW1SMXrfsC4iU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kelvin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T13:35:48Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2049,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$qk0btchzsUvVE21hhxOTap$2QGBfobA4aTcQnaun0UUoHh5llQ4xFwKi506Meiqtrs=",
+    "last_login": "2026-10-16T13:40:37.169Z",
+    "is_superuser": false,
+    "username": "martha",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-16T13:36:57Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2050,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$EyCj4JCjbwRf3ouMUbUjar$IhbfZm+oNmWL2Kalqi6BanOVPqiYiwKKQEbT3bIiXhY=",
+    "last_login": "2026-10-19T09:26:18.811Z",
+    "is_superuser": false,
+    "username": "Alan",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-19T08:27:49.321Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2051,
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$X8rRthV6TTkikaonwUUcyp$d/UX0XD2/WBP+sPa6mBOdRSSetLricSfujz+RFt6qxw=",
+    "last_login": "2026-10-19T08:54:43.090Z",
+    "is_superuser": false,
+    "username": "Osman",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-19T08:54:24.181Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1010,
+  "fields": {
+    "user": 1009,
+    "reg_number": "IN13/00140/24",
+    "full_name": "JAYSON OKEROSI",
+    "gender": "Male",
+    "year_of_study": 4,
+    "home_distance": 10.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1011,
+  "fields": {
+    "user": 2009,
+    "reg_number": "IN13/00137/24",
+    "full_name": "FRANKLINE MAKORI",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 20.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1012,
+  "fields": {
+    "user": 2013,
+    "reg_number": "IN13/00030/24",
+    "full_name": "NEEMA MAJIRA",
+    "gender": "Female",
+    "year_of_study": 3,
+    "home_distance": 40.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1013,
+  "fields": {
+    "user": 2012,
+    "reg_number": "IN13/00136/24",
+    "full_name": "SHARON BOSIBORI",
+    "gender": "Female",
+    "year_of_study": 3,
+    "home_distance": 15.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1015,
+  "fields": {
+    "user": 2011,
+    "reg_number": "IN13/00139/24",
+    "full_name": "BRIAN OGERO",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 10.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1016,
+  "fields": {
+    "user": 2014,
+    "reg_number": "IN13/00158/24",
+    "full_name": "SUSAN AWINO",
+    "gender": "Female",
+    "year_of_study": 3,
+    "home_distance": 100.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1017,
+  "fields": {
+    "user": 2026,
+    "reg_number": "IN13/00129/24",
+    "full_name": "JOB NEKO",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 10.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1018,
+  "fields": {
+    "user": 2027,
+    "reg_number": "IN13/00198/24",
+    "full_name": "PETERSON ROONEY",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 45.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1019,
+  "fields": {
+    "user": 2024,
+    "reg_number": "IN13/00135/24",
+    "full_name": "PETER KENNEDY",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 25.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1020,
+  "fields": {
+    "user": 2025,
+    "reg_number": "IN13/00134/24",
+    "full_name": "FRANKLINE OMARIBA",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 30.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1021,
+  "fields": {
+    "user": 2028,
+    "reg_number": "IN13/00133/24",
+    "full_name": "SHARON BOSIBORI",
+    "gender": "Female",
+    "year_of_study": 3,
+    "home_distance": 35.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1022,
+  "fields": {
+    "user": 2029,
+    "reg_number": "IN13/00023/24",
+    "full_name": "DAVID MWANGI",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 42.0,
+    "fee_clearance": true,
+    "disciplinary_status": true,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1023,
+  "fields": {
+    "user": 2030,
+    "reg_number": "IN13/00146/24",
+    "full_name": "BARACK GIEL",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 20.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1024,
+  "fields": {
+    "user": 2031,
+    "reg_number": "IN13/00149/24",
+    "full_name": "SHARLEEN MKONZO",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 78.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1025,
+  "fields": {
+    "user": 2032,
+    "reg_number": "IN13/00160/24",
+    "full_name": "VICTOR WANYAMA",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 39.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1026,
+  "fields": {
+    "user": 2033,
+    "reg_number": "IN13/00151/24",
+    "full_name": "WINIE LENTILAU",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 76.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1027,
+  "fields": {
+    "user": 2034,
+    "reg_number": "IN13/00124/24",
+    "full_name": "ELIZABETH ADHIAMBO",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 40.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1028,
+  "fields": {
+    "user": 2010,
+    "reg_number": "IN13/00138/24",
+    "full_name": "PAUL OGES",
+    "gender": "Male",
+    "year_of_study": 1,
+    "home_distance": 21.0,
+    "fee_clearance": true,
+    "disciplinary_status": true,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1029,
+  "fields": {
+    "user": 2037,
+    "reg_number": "IN13/00010/24",
+    "full_name": "CALEN BIYAKI",
+    "gender": "Female",
+    "year_of_study": 1,
+    "home_distance": 23.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1030,
+  "fields": {
+    "user": 2035,
+    "reg_number": "IN13/0002/24",
+    "full_name": "MESHACK MOMANYI",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 21.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1031,
+  "fields": {
+    "user": 2036,
+    "reg_number": "IN13/0003/24",
+    "full_name": "WAREN MITO",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 26.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1032,
+  "fields": {
+    "user": 2038,
+    "reg_number": "IN13/0004/24",
+    "full_name": "UPHEMIA KEMUNTO",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 20.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1033,
+  "fields": {
+    "user": 2039,
+    "reg_number": "IN13/0005/24",
+    "full_name": "QUNTIE OBOBE",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 4.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1034,
+  "fields": {
+    "user": 2040,
+    "reg_number": "IN13/0006/24",
+    "full_name": "PHENA MORAA",
+    "gender": "Female",
+    "year_of_study": 2,
+    "home_distance": 20.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1035,
+  "fields": {
+    "user": 2041,
+    "reg_number": "IN13/0007/24",
+    "full_name": "JUSTIN BIEOL",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 25.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1036,
+  "fields": {
+    "user": 2042,
+    "reg_number": "IN13/00143/24",
+    "full_name": "JAYSON OKEROSI",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 4.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1037,
+  "fields": {
+    "user": 2044,
+    "reg_number": "IN13/007/24",
+    "full_name": "WEEKLIF  GISAINA",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 40.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1038,
+  "fields": {
+    "user": 2043,
+    "reg_number": "IN13/008/24",
+    "full_name": "STEPHEN KEMBOI",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 60.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1039,
+  "fields": {
+    "user": 2046,
+    "reg_number": "IN13/00111/24",
+    "full_name": "ELISHA MATONGO",
+    "gender": "Male",
+    "year_of_study": 3,
+    "home_distance": 43.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1040,
+  "fields": {
+    "user": 2045,
+    "reg_number": "IN13/00112/24",
+    "full_name": "MARK MATONGO",
+    "gender": "Male",
+    "year_of_study": 4,
+    "home_distance": 45.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1041,
+  "fields": {
+    "user": 2049,
+    "reg_number": "iIN13/00123/24",
+    "full_name": "MARTHA EZEKIEL",
+    "gender": "Female",
+    "year_of_study": 1,
+    "home_distance": 21.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1042,
+  "fields": {
+    "user": 2047,
+    "reg_number": "IN13/00122/24",
+    "full_name": "MILKER OMARI",
+    "gender": "Female",
+    "year_of_study": 1,
+    "home_distance": 36.0,
+    "fee_clearance": true,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1043,
+  "fields": {
+    "user": 2050,
+    "reg_number": "IN13/00130/24",
+    "full_name": "Alan",
+    "gender": "Male",
+    "year_of_study": 1,
+    "home_distance": 60.0,
+    "fee_clearance": false,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+},
+{
+  "model": "student.student",
+  "pk": 1044,
+  "fields": {
+    "user": 2051,
+    "reg_number": "IN13/00200/24",
+    "full_name": "Osman Dembele",
+    "gender": "Male",
+    "year_of_study": 2,
+    "home_distance": 3.0,
+    "fee_clearance": false,
+    "disciplinary_status": false,
+    "held_previous_semester": false,
+    "profile_picture": ""
+  }
+}
+]
