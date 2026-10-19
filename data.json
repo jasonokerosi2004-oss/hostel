@@ -1,5 +1,2124 @@
 [
 {
+  "model": "admin.logentry",
+  "pk": 2051,
+  "fields": {
+    "action_time": "2026-10-14T12:40:31.158Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2007",
+    "object_repr": "accomodationofficer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2052,
+  "fields": {
+    "action_time": "2026-10-14T12:41:19.791Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2007",
+    "object_repr": "accomodationofficer",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2053,
+  "fields": {
+    "action_time": "2026-10-14T12:43:13.870Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1010",
+    "object_repr": "JAYSON OKEROSI (IN13/00140/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2054,
+  "fields": {
+    "action_time": "2026-10-14T14:39:20.081Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2007",
+    "object_repr": "accomodationofficer",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2055,
+  "fields": {
+    "action_time": "2026-10-14T14:41:24.800Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2007",
+    "object_repr": "accomodationofficer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2056,
+  "fields": {
+    "action_time": "2026-10-14T14:49:34.717Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2008",
+    "object_repr": "accomodationofficer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2057,
+  "fields": {
+    "action_time": "2026-10-14T14:50:05.375Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2008",
+    "object_repr": "accomodationofficer",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2058,
+  "fields": {
+    "action_time": "2026-10-14T14:53:24.695Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2009",
+    "object_repr": "frank",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2059,
+  "fields": {
+    "action_time": "2026-10-14T14:54:10.280Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2009",
+    "object_repr": "frank",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2060,
+  "fields": {
+    "action_time": "2026-10-14T14:55:25.613Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2010",
+    "object_repr": "paul",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2061,
+  "fields": {
+    "action_time": "2026-10-14T14:55:37.310Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2010",
+    "object_repr": "paul",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2062,
+  "fields": {
+    "action_time": "2026-10-14T14:56:51.313Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2011",
+    "object_repr": "ogero",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2063,
+  "fields": {
+    "action_time": "2026-10-14T14:57:43.004Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2011",
+    "object_repr": "ogero",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2064,
+  "fields": {
+    "action_time": "2026-10-14T14:59:09.805Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2012",
+    "object_repr": "sharon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2065,
+  "fields": {
+    "action_time": "2026-10-14T14:59:28.985Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2012",
+    "object_repr": "sharon",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2066,
+  "fields": {
+    "action_time": "2026-10-14T15:00:32.658Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2013",
+    "object_repr": "neema",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2067,
+  "fields": {
+    "action_time": "2026-10-14T15:00:40.800Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2013",
+    "object_repr": "neema",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2068,
+  "fields": {
+    "action_time": "2026-10-14T15:03:33.257Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1011",
+    "object_repr": "FRANKLINE MAKORI (IN13/00137/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2069,
+  "fields": {
+    "action_time": "2026-10-14T15:04:59.037Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1012",
+    "object_repr": "NEEMA MAJIRA (IN13/00030/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2070,
+  "fields": {
+    "action_time": "2026-10-14T15:06:21.017Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1013",
+    "object_repr": "SHARON BOSIBORI (IN13/00136/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2071,
+  "fields": {
+    "action_time": "2026-10-14T15:08:10.076Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1014",
+    "object_repr": "PAUL OJES (IN13/00138/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2072,
+  "fields": {
+    "action_time": "2026-10-14T15:10:39.457Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1014",
+    "object_repr": "PAUL OJES (IN13/00138/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2073,
+  "fields": {
+    "action_time": "2026-10-14T15:11:44.863Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1015",
+    "object_repr": "BRIAN OGERO (IN13/00139/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2074,
+  "fields": {
+    "action_time": "2026-10-14T15:13:03.599Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2014",
+    "object_repr": "susan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2075,
+  "fields": {
+    "action_time": "2026-10-14T15:13:13.289Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2014",
+    "object_repr": "susan",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2076,
+  "fields": {
+    "action_time": "2026-10-14T15:15:12.312Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1016",
+    "object_repr": "SUSAN AWINO (IN13/00158/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2077,
+  "fields": {
+    "action_time": "2026-10-14T15:17:05.157Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1006",
+    "object_repr": "MERCURY",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2078,
+  "fields": {
+    "action_time": "2026-10-14T15:17:38.338Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1007",
+    "object_repr": "VENUS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2079,
+  "fields": {
+    "action_time": "2026-10-14T15:18:15.417Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1008",
+    "object_repr": "EARTH",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2080,
+  "fields": {
+    "action_time": "2026-10-14T15:19:05.732Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1009",
+    "object_repr": "MARS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2081,
+  "fields": {
+    "action_time": "2026-10-14T15:20:16.305Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1010",
+    "object_repr": "JUPYTER",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2082,
+  "fields": {
+    "action_time": "2026-10-14T15:21:30.840Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1011",
+    "object_repr": "SATURN",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2083,
+  "fields": {
+    "action_time": "2026-10-14T15:23:07.037Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1012",
+    "object_repr": "URANAS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2084,
+  "fields": {
+    "action_time": "2026-10-14T15:24:08.527Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1013",
+    "object_repr": "NEPTUNE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2085,
+  "fields": {
+    "action_time": "2026-10-14T15:25:09.206Z",
+    "user": 1009,
+    "content_type": 22,
+    "object_id": "1014",
+    "object_repr": "PLUTO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2086,
+  "fields": {
+    "action_time": "2026-10-14T15:26:29.796Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1006",
+    "object_repr": "MERCURY - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2087,
+  "fields": {
+    "action_time": "2026-10-14T15:27:24.422Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1007",
+    "object_repr": "VENUS - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2088,
+  "fields": {
+    "action_time": "2026-10-14T15:28:28.434Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1008",
+    "object_repr": "EARTH - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2089,
+  "fields": {
+    "action_time": "2026-10-14T15:29:28.886Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1009",
+    "object_repr": "MARS - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2090,
+  "fields": {
+    "action_time": "2026-10-14T15:30:10.209Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1010",
+    "object_repr": "JUPYTER - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2091,
+  "fields": {
+    "action_time": "2026-10-14T15:30:51.035Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1011",
+    "object_repr": "SATURN - Room 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2092,
+  "fields": {
+    "action_time": "2026-10-14T15:42:42.735Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1016",
+    "object_repr": "SUSAN AWINO (IN13/00158/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Fee clearance\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2093,
+  "fields": {
+    "action_time": "2026-10-15T08:05:49.367Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2015",
+    "object_repr": "mercury",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2094,
+  "fields": {
+    "action_time": "2026-10-15T08:06:11.973Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2015",
+    "object_repr": "mercury",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2095,
+  "fields": {
+    "action_time": "2026-10-15T08:08:34.067Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2016",
+    "object_repr": "venuscaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2096,
+  "fields": {
+    "action_time": "2026-10-15T08:08:49.971Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2016",
+    "object_repr": "venuscaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2097,
+  "fields": {
+    "action_time": "2026-10-15T08:09:41.003Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2017",
+    "object_repr": "earthcaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2098,
+  "fields": {
+    "action_time": "2026-10-15T08:09:48.813Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2017",
+    "object_repr": "earthcaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2099,
+  "fields": {
+    "action_time": "2026-10-15T08:11:08.810Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2018",
+    "object_repr": "marscaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2100,
+  "fields": {
+    "action_time": "2026-10-15T08:11:19.961Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2018",
+    "object_repr": "marscaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2101,
+  "fields": {
+    "action_time": "2026-10-15T08:12:24.347Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2019",
+    "object_repr": "jupytercaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2102,
+  "fields": {
+    "action_time": "2026-10-15T08:12:37.116Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2019",
+    "object_repr": "jupytercaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2103,
+  "fields": {
+    "action_time": "2026-10-15T08:13:23.196Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2020",
+    "object_repr": "saturncaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2104,
+  "fields": {
+    "action_time": "2026-10-15T08:13:32.215Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2020",
+    "object_repr": "saturncaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2105,
+  "fields": {
+    "action_time": "2026-10-15T08:14:40.378Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2021",
+    "object_repr": "neptunecaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2106,
+  "fields": {
+    "action_time": "2026-10-15T08:14:46.124Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2021",
+    "object_repr": "neptunecaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2107,
+  "fields": {
+    "action_time": "2026-10-15T08:15:45.021Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2022",
+    "object_repr": "uranascaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2108,
+  "fields": {
+    "action_time": "2026-10-15T08:15:51.087Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2022",
+    "object_repr": "uranascaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2109,
+  "fields": {
+    "action_time": "2026-10-15T08:16:29.380Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2023",
+    "object_repr": "plutocaretaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2110,
+  "fields": {
+    "action_time": "2026-10-15T08:16:37.055Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2023",
+    "object_repr": "plutocaretaker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2111,
+  "fields": {
+    "action_time": "2026-10-15T08:18:02.662Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1005",
+    "object_repr": "Caretaker: jason (MERCURY)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2112,
+  "fields": {
+    "action_time": "2026-10-15T08:18:30.617Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1004",
+    "object_repr": "Caretaker: susan (MERCURY)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2113,
+  "fields": {
+    "action_time": "2026-10-15T08:19:35.048Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1006",
+    "object_repr": "Caretaker: NEEMA (VENUS)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2114,
+  "fields": {
+    "action_time": "2026-10-15T08:20:30.642Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1007",
+    "object_repr": "Caretaker: Hezron (EARTH)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2115,
+  "fields": {
+    "action_time": "2026-10-15T08:21:24.464Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1008",
+    "object_repr": "Caretaker: Justin (MARS)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2116,
+  "fields": {
+    "action_time": "2026-10-15T08:22:15.246Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1009",
+    "object_repr": "Caretaker: Norah (JUPYTER)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2117,
+  "fields": {
+    "action_time": "2026-10-15T08:24:23.344Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1010",
+    "object_repr": "Caretaker: Phena (SATURN)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2118,
+  "fields": {
+    "action_time": "2026-10-15T08:26:03.902Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1011",
+    "object_repr": "Caretaker: Gelan (URANAS)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2119,
+  "fields": {
+    "action_time": "2026-10-15T08:27:15.703Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1012",
+    "object_repr": "Caretaker: Dancan (NEPTUNE)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2120,
+  "fields": {
+    "action_time": "2026-10-15T08:28:17.395Z",
+    "user": 1009,
+    "content_type": 21,
+    "object_id": "1013",
+    "object_repr": "Caretaker: EngineerPeter (PLUTO)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2121,
+  "fields": {
+    "action_time": "2026-10-15T08:39:04.055Z",
+    "user": 1009,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Officer: Jasonokerosi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2122,
+  "fields": {
+    "action_time": "2026-10-15T08:39:55.179Z",
+    "user": 1009,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "Officer: KSU/OFFICER/001",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2123,
+  "fields": {
+    "action_time": "2026-10-15T11:17:23.763Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2024",
+    "object_repr": "peterkennedy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2124,
+  "fields": {
+    "action_time": "2026-10-15T11:17:34.007Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2024",
+    "object_repr": "peterkennedy",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2125,
+  "fields": {
+    "action_time": "2026-10-15T11:19:24.630Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2025",
+    "object_repr": "frankline",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2126,
+  "fields": {
+    "action_time": "2026-10-15T11:19:38.071Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2025",
+    "object_repr": "frankline",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2127,
+  "fields": {
+    "action_time": "2026-10-15T11:21:59.700Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2026",
+    "object_repr": "jobneko",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2128,
+  "fields": {
+    "action_time": "2026-10-15T11:22:07.122Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2026",
+    "object_repr": "jobneko",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2129,
+  "fields": {
+    "action_time": "2026-10-15T11:23:30.973Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2027",
+    "object_repr": "petersonrooney",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2130,
+  "fields": {
+    "action_time": "2026-10-15T11:23:39.469Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2027",
+    "object_repr": "petersonrooney",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2131,
+  "fields": {
+    "action_time": "2026-10-15T11:24:35.182Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2028",
+    "object_repr": "sharonbosibori",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2132,
+  "fields": {
+    "action_time": "2026-10-15T11:24:41.949Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2028",
+    "object_repr": "sharonbosibori",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2133,
+  "fields": {
+    "action_time": "2026-10-15T11:26:11.598Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1017",
+    "object_repr": "JOB NEKO (IN13/00129/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2134,
+  "fields": {
+    "action_time": "2026-10-15T11:27:17.447Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1018",
+    "object_repr": "PETERSON ROONEY (IN13/00198/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2135,
+  "fields": {
+    "action_time": "2026-10-15T11:28:23.223Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1019",
+    "object_repr": "PETER KENNEDY (IN13/00135/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2136,
+  "fields": {
+    "action_time": "2026-10-15T11:29:18.535Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1020",
+    "object_repr": "FRANKLINE OMARIBA (IN13/00134/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2137,
+  "fields": {
+    "action_time": "2026-10-15T11:31:03.430Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1021",
+    "object_repr": "SHARON BOSIBORI (IN13/00133/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2138,
+  "fields": {
+    "action_time": "2026-10-15T11:31:59.789Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1012",
+    "object_repr": "MERCURY - Room 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2139,
+  "fields": {
+    "action_time": "2026-10-15T11:32:26.534Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1013",
+    "object_repr": "VENUS - Room 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2140,
+  "fields": {
+    "action_time": "2026-10-15T11:32:53.104Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1014",
+    "object_repr": "EARTH - Room 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2141,
+  "fields": {
+    "action_time": "2026-10-15T13:23:28.242Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2029",
+    "object_repr": "david",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2142,
+  "fields": {
+    "action_time": "2026-10-15T13:23:37.250Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2029",
+    "object_repr": "david",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2143,
+  "fields": {
+    "action_time": "2026-10-15T13:24:53.256Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1022",
+    "object_repr": "DAVID MWANGI (IN13/00023/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2144,
+  "fields": {
+    "action_time": "2026-10-15T13:25:55.842Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1022",
+    "object_repr": "DAVID MWANGI (IN13/00023/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Fee clearance\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2145,
+  "fields": {
+    "action_time": "2026-10-15T13:39:34.009Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2030",
+    "object_repr": "barackgiel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2146,
+  "fields": {
+    "action_time": "2026-10-15T13:39:40.963Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2030",
+    "object_repr": "barackgiel",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2147,
+  "fields": {
+    "action_time": "2026-10-15T13:40:47.325Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2031",
+    "object_repr": "shareenmkonzo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2148,
+  "fields": {
+    "action_time": "2026-10-15T13:41:53.365Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1023",
+    "object_repr": "BARACK GIEL (IN13/00146/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2149,
+  "fields": {
+    "action_time": "2026-10-15T13:42:51.771Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1024",
+    "object_repr": "SHARLEEN MKONZO (IN13/00149/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2150,
+  "fields": {
+    "action_time": "2026-10-15T13:53:04.392Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2032",
+    "object_repr": "wanyama",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2151,
+  "fields": {
+    "action_time": "2026-10-15T13:53:11.474Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2032",
+    "object_repr": "wanyama",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2152,
+  "fields": {
+    "action_time": "2026-10-15T13:54:20.680Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1025",
+    "object_repr": "VICTOR WANYAMA (IN13/00160/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2153,
+  "fields": {
+    "action_time": "2026-10-15T17:58:53.265Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2033",
+    "object_repr": "winie",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2154,
+  "fields": {
+    "action_time": "2026-10-15T17:59:16.974Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2033",
+    "object_repr": "winie",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2155,
+  "fields": {
+    "action_time": "2026-10-15T18:00:58.764Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2034",
+    "object_repr": "eliz",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2156,
+  "fields": {
+    "action_time": "2026-10-15T18:01:04.627Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2034",
+    "object_repr": "eliz",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2157,
+  "fields": {
+    "action_time": "2026-10-15T18:02:50.030Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1026",
+    "object_repr": "WINIE LENTILAU (IN13/00151/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2158,
+  "fields": {
+    "action_time": "2026-10-15T18:04:27.293Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1027",
+    "object_repr": "ELIZABETH ADHIAMBO (IN13/00124/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2159,
+  "fields": {
+    "action_time": "2026-10-15T18:04:45.295Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1026",
+    "object_repr": "WINIE LENTILAU (IN13/00151/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Fee clearance\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2160,
+  "fields": {
+    "action_time": "2026-10-15T18:10:26.981Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1014",
+    "object_repr": "PAUL OJES (IN13/00138/24)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2161,
+  "fields": {
+    "action_time": "2026-10-15T18:12:00.845Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1028",
+    "object_repr": "PAUL OGES (IN13/00138/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2162,
+  "fields": {
+    "action_time": "2026-10-15T18:23:04.928Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1028",
+    "object_repr": "PAUL OGES (IN13/00138/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Disciplinary status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2163,
+  "fields": {
+    "action_time": "2026-10-15T18:26:50.148Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2035",
+    "object_repr": "meshack",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2164,
+  "fields": {
+    "action_time": "2026-10-15T18:26:58.471Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2035",
+    "object_repr": "meshack",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2165,
+  "fields": {
+    "action_time": "2026-10-15T18:28:11.111Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2036",
+    "object_repr": "waren",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2166,
+  "fields": {
+    "action_time": "2026-10-15T18:28:21.838Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2036",
+    "object_repr": "waren",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2167,
+  "fields": {
+    "action_time": "2026-10-15T18:29:56.092Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2037",
+    "object_repr": "caren",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2168,
+  "fields": {
+    "action_time": "2026-10-15T18:31:31.247Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2037",
+    "object_repr": "caren",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2169,
+  "fields": {
+    "action_time": "2026-10-15T18:33:27.960Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1029",
+    "object_repr": "CALEN BIYAKI (IN13/00010/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2170,
+  "fields": {
+    "action_time": "2026-10-15T18:35:36.018Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1030",
+    "object_repr": "MESHACK MOMANYI (IN13/0002/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2171,
+  "fields": {
+    "action_time": "2026-10-15T18:37:43.228Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1031",
+    "object_repr": "WAREN MITO (IN13/0003/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2172,
+  "fields": {
+    "action_time": "2026-10-15T18:59:36.016Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1015",
+    "object_repr": "MARS Room 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2173,
+  "fields": {
+    "action_time": "2026-10-15T19:00:37.199Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1016",
+    "object_repr": "JUPYTER Room 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2174,
+  "fields": {
+    "action_time": "2026-10-15T19:05:40.708Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2038",
+    "object_repr": "Uphemia",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2175,
+  "fields": {
+    "action_time": "2026-10-15T19:05:47.374Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2038",
+    "object_repr": "Uphemia",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2176,
+  "fields": {
+    "action_time": "2026-10-15T19:07:01.778Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2039",
+    "object_repr": "quintie",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2177,
+  "fields": {
+    "action_time": "2026-10-15T19:08:44.617Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1032",
+    "object_repr": "UPHEMIA KEMUNTO (IN13/0004/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2178,
+  "fields": {
+    "action_time": "2026-10-15T19:10:09.509Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1033",
+    "object_repr": "QUNTIE OBOBE (IN13/0005/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2179,
+  "fields": {
+    "action_time": "2026-10-15T19:10:24.492Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1032",
+    "object_repr": "UPHEMIA KEMUNTO (IN13/0004/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gender\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2180,
+  "fields": {
+    "action_time": "2026-10-15T19:11:52.311Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2040",
+    "object_repr": "Phena",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2181,
+  "fields": {
+    "action_time": "2026-10-15T19:12:01.442Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2040",
+    "object_repr": "Phena",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2182,
+  "fields": {
+    "action_time": "2026-10-15T19:13:30.467Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1034",
+    "object_repr": "PHENA MORAA (IN13/0006/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2183,
+  "fields": {
+    "action_time": "2026-10-15T19:14:56.067Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2041",
+    "object_repr": "justin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2184,
+  "fields": {
+    "action_time": "2026-10-15T19:15:04.220Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2041",
+    "object_repr": "justin",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2185,
+  "fields": {
+    "action_time": "2026-10-15T19:16:35.000Z",
+    "user": 2008,
+    "content_type": 26,
+    "object_id": "1035",
+    "object_repr": "JUSTIN BIEOL (IN13/0007/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2186,
+  "fields": {
+    "action_time": "2026-10-15T19:19:18.667Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2042",
+    "object_repr": "jayson",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2187,
+  "fields": {
+    "action_time": "2026-10-15T19:19:29.121Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "2042",
+    "object_repr": "jayson",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2188,
+  "fields": {
+    "action_time": "2026-10-15T19:26:26.978Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1036",
+    "object_repr": "JAYSON OKEROSI (IN13/00143/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2189,
+  "fields": {
+    "action_time": "2026-10-16T10:17:29.489Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2043",
+    "object_repr": "stephen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2190,
+  "fields": {
+    "action_time": "2026-10-16T10:17:33.935Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2043",
+    "object_repr": "stephen",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2191,
+  "fields": {
+    "action_time": "2026-10-16T10:18:13.471Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2044",
+    "object_repr": "weeklif",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2192,
+  "fields": {
+    "action_time": "2026-10-16T10:19:31.663Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1037",
+    "object_repr": "WEEKLIF  GISAINA (IN13/007/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2193,
+  "fields": {
+    "action_time": "2026-10-16T10:20:42.955Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1038",
+    "object_repr": "STEPHEN KEMBOI (IN13/008/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2194,
+  "fields": {
+    "action_time": "2026-10-16T13:01:28.930Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1017",
+    "object_repr": "MERCURY Room 3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2195,
+  "fields": {
+    "action_time": "2026-10-16T13:18:36.990Z",
+    "user": 1009,
+    "content_type": 25,
+    "object_id": "1018",
+    "object_repr": "MERCURY Room 4",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2196,
+  "fields": {
+    "action_time": "2026-10-16T13:19:31.598Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2045",
+    "object_repr": "mark",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2197,
+  "fields": {
+    "action_time": "2026-10-16T13:19:41.815Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2045",
+    "object_repr": "mark",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2198,
+  "fields": {
+    "action_time": "2026-10-16T13:20:13.767Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2046",
+    "object_repr": "elisha",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2199,
+  "fields": {
+    "action_time": "2026-10-16T13:20:32.928Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2046",
+    "object_repr": "elisha",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2200,
+  "fields": {
+    "action_time": "2026-10-16T13:22:44.315Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1039",
+    "object_repr": "ELISHA MATONGO (IN13/00111/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2201,
+  "fields": {
+    "action_time": "2026-10-16T13:23:30.933Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1040",
+    "object_repr": "MARK MATONGO (IN13/00112/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2202,
+  "fields": {
+    "action_time": "2026-10-16T13:24:24.806Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1040",
+    "object_repr": "MARK MATONGO (IN13/00112/24)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Fee clearance\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2203,
+  "fields": {
+    "action_time": "2026-10-16T13:32:50.975Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2046",
+    "object_repr": "elisha",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2204,
+  "fields": {
+    "action_time": "2026-10-16T13:35:02.845Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2047",
+    "object_repr": "milker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2205,
+  "fields": {
+    "action_time": "2026-10-16T13:35:07.648Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2047",
+    "object_repr": "milker",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2206,
+  "fields": {
+    "action_time": "2026-10-16T13:35:51.818Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2048",
+    "object_repr": "kelvin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2207,
+  "fields": {
+    "action_time": "2026-10-16T13:35:56.786Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2048",
+    "object_repr": "kelvin",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2208,
+  "fields": {
+    "action_time": "2026-10-16T13:37:00.587Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2049",
+    "object_repr": "martha",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2209,
+  "fields": {
+    "action_time": "2026-10-16T13:37:12.336Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2049",
+    "object_repr": "martha",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2210,
+  "fields": {
+    "action_time": "2026-10-16T13:38:27.389Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1041",
+    "object_repr": "MARTHA EZEKIEL (iIN13/00123/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2211,
+  "fields": {
+    "action_time": "2026-10-16T13:39:27.063Z",
+    "user": 1009,
+    "content_type": 26,
+    "object_id": "1042",
+    "object_repr": "MILKER OMARI (IN13/00122/24)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2212,
+  "fields": {
+    "action_time": "2026-10-18T19:01:53.596Z",
+    "user": 1009,
+    "content_type": 4,
+    "object_id": "2009",
+    "object_repr": "frank",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2213,
+  "fields": {
+    "action_time": "2026-10-19T10:21:57.727Z",
+    "user": 2008,
+    "content_type": 4,
+    "object_id": "1009",
+    "object_repr": "jason",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1009,
   "fields": {
@@ -810,6 +2929,318 @@
   }
 },
 {
+  "model": "sessions.session",
+  "pk": "5b9zsxg5fiovsapz5ztew70a9228rhg8",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4riuElwR_Z-Q-XECS2gVupjQvw7qtQB1rvTvaGXfRv6fS1LPyq04KxluPziJPlZpsPpQ6b7bPI8bcuYzJGY066mm7W8bmf7NxhkHaAF9k1gutZaqke2GGpySOyp1sCSkaISuRgTKiWOliKKw6TcaGChAp8vM0E3vQ:1xIWCU:txfzCdfSCzlF-aW0U49Ynlaa_UW1xbJUlcJhd8S61GM",
+    "expire_date": "2026-11-01T19:05:42.093Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7mtylw2i245tlwfs6pu33ptlv6xztdeb",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4ocJ32kIzvfUMWOQwqolZp2Qvw7qtQB1rvTvWGM-1bGveo6TgkGsIgBLr-Yozx1Plx6xPm-GFnmbZ3YHIk5bTW3JenrerZ_gxJrgQGIGHuXSbVl2_VZWZFddsidJut976hhbaLLQXyyYrNIy8gk6pB8gM8XZ4U5Dw:1xGxFX:jK3YSNGGG9-H8vP9-ujSOzmWQ6gddi7GbpMeHtJ-Pzc",
+    "expire_date": "2026-10-28T11:34:23.431Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "kvn5y9dgf36nlsekclh7c0vhubili6aw",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAQAP-yNbLseH2Ekp43RHtBAiiRclSIv6NIKaCdGc0bOtrWvtsWm7tB4QyN9xVOv5hJnjbuTh803icn07jOA7s9cYdd3HVSe12O9m_Q09LDGdAaxmiaI-mNihSTmplqTRLQVy05ZSqhMrasjMlLKzFETYaGQRJ8vmtkOM4:1xHHty:N-M6sYWjfwEWZA7zwYGxTHMXj4XiZ0FhGTPqNQYD6Vw",
+    "expire_date": "2026-10-29T09:37:30.881Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "l9h09dig2hj4879umff7mg2neke01axs",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4ocJ32kIzvfUMWOQwqolZp2Qvw7qtQB1rvTvWGM-1bGveo6TgkGsIgBLr-Yozx1Plx6xPm-GFnmbZ3YHIk5bTW3JenrerZ_gxJrgQGIGHuXSbVl2_VZWZFddsidJut976hhbaLLQXyyYrNIy8gk6pB8gM8XZ4U5Dw:1xHQ4Y:T30iTQaQUOE7fGnHV3ThiLU2x8mR_4i9PzDTLsqCn8s",
+    "expire_date": "2026-10-29T18:20:58.970Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mm63g0r2tainn4v7tczhbwaoog6ejbmv",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQBf-FsyFAYSkevfcbyAKLVA0kpT0Z_92Q9KDXNzPvzTwee_FHp82viV2ZFEKzy-8cMD6pDpYeWO-Nx1b3bQ18KPyknS8t0et2un8HBXsZdZyS0ibgLNES2QwmaQApzaxVQutyCHZCcC6TcVmokAU4gQ7iRDIr9vkCXKA4pw:1xGwpT:W4jOOkZOJ5RnlZMxYCZQWkpHhT1z_3la9V_A-uaf_Wo",
+    "expire_date": "2026-10-28T11:07:27.006Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ol5onpgmv2mflz9o17m5kz6ozqtr79xv",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAQAP-yNbLseH2Ekp43RHtBAiiRclSIv6NIKaCdGc0bOtrWvtsWm7tB4QyN9xVOv5hJnjbuTh803icn07jOA7s9cYdd3HVSe12O9m_Q09LDGdAaxmiaI-mNihSTmplqTRLQVy05ZSqhMrasjMlLKzFETYaGQRJ8vmtkOM4:1xIkVB:bjHQw5BqASwQkZy6LoF5QvYrw69WuuUf8KAevPEabfo",
+    "expire_date": "2026-11-02T10:21:57.778Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pebhx789azrqeer1sfq2o69x2p4ga64r",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYpwCQ5h7M4bkJ3YhbYCicBU9e8VEkO73p3uDQPv2zjsRddhytABwuWXCaenzofID57vi0vLvK2TuCNxpy2uX7K-bmf7Nxi5jNBB02KUxjChWvYRTSVEYTavoTWyWBGTT2ipqkNNGpCJxecsZkJXgs8XBO04_w:1xGWMa:h9-3dS8jqY8RBlzNpzYDkt88fTxBuZEjqGUNqx4ZSAw",
+    "expire_date": "2026-10-27T06:51:52.396Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "u6dfvwnx2kk569jv7ir36ke5itt7vdwi",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4ocJ32kIzvfUMWOQwqolZp2Qvw7qtQB1rvTvWGM-1bGveo6TgkGsIgBLr-Yozx1Plx6xPm-GFnmbZ3YHIk5bTW3JenrerZ_gxJrgQGIGHuXSbVl2_VZWZFddsidJut976hhbaLLQXyyYrNIy8gk6pB8gM8XZ4U5Dw:1xHIr7:4ywupz81xv-AvuJuyjtOx_0wGFV2OEUtaZe8pH8Ycyg",
+    "expire_date": "2026-10-29T10:38:37.194Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "u84jui72xf4dlrbv2gdsjtxhetvwp5d8",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAQAP-yNbLseH2Ekp43RHtBAiiRclSIv6NIKaCdGc0bOtrWvtsWm7tB4QyN9xVOv5hJnjbuTh803icn07jOA7s9cYdd3HVSe12O9m_Q09LDGdAaxmiaI-mNihSTmplqTRLQVy05ZSqhMrasjMlLKzFETYaGQRJ8vmtkOM4:1xHPXh:kMBVgTesBZbPfnLWqiGiLtJOMjYibgETrhlj3FljxGE",
+    "expire_date": "2026-10-29T17:47:01.166Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "w4qraqqml5dmjxd6w6mcvjb82smn1mra",
+  "fields": {
+    "session_data": ".eJxVzDkOwjAURdG9_BpZnoeU9KzB-p5wANlSnFSIvSNLKaB99-i9weOxV3-MvPk1wQKccgWX3zlgfOY2W3pgu3cSe9u3NZBJyFkHufWUX9fT_h1UHBUWoMlEaYNjjgVZFLPCSKVL0TFFy5xwiFwbPVlwArVwqkRRrDFZZ0wUPl9Bkzha:1xHJsV:n0jMzaj9PIpPYDasTQqDCVFelR9lv1snQAH5agdBP4A",
+    "expire_date": "2026-10-29T11:44:07.403Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z11mmovmbu18cprzqks4nk1qqjt5cf63",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYpwCQ5h7M4bkJ3YhbYCicBU9e8VEkO73p3uDQPv2zjsRddhytABwuWXCaenzofID57vi0vLvK2TuCNxpy2uX7K-bmf7Nxi5jNBB02KUxjChWvYRTSVEYTavoTWyWBGTT2ipqkNNGpCJxecsZkJXgs8XBO04_w:1xCDuV:S5xTqlzYOYQ9l_M4--oMQ86tl_VMd3Wo2P4vOKo0K3A",
+    "expire_date": "2026-10-15T10:21:07.009Z"
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1006,
+  "fields": {
+    "hall_name": "MERCURY",
+    "gender_policy": "MALE",
+    "total_capacity": 60
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1007,
+  "fields": {
+    "hall_name": "VENUS",
+    "gender_policy": "FEMALE",
+    "total_capacity": 50
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1008,
+  "fields": {
+    "hall_name": "EARTH",
+    "gender_policy": "MIXED",
+    "total_capacity": 60
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1009,
+  "fields": {
+    "hall_name": "MARS",
+    "gender_policy": "MALE",
+    "total_capacity": 60
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1010,
+  "fields": {
+    "hall_name": "JUPYTER",
+    "gender_policy": "FEMALE",
+    "total_capacity": 60
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1011,
+  "fields": {
+    "hall_name": "SATURN",
+    "gender_policy": "MIXED",
+    "total_capacity": 100
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1012,
+  "fields": {
+    "hall_name": "URANAS",
+    "gender_policy": "MALE",
+    "total_capacity": 80
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1013,
+  "fields": {
+    "hall_name": "NEPTUNE",
+    "gender_policy": "FEMALE",
+    "total_capacity": 100
+  }
+},
+{
+  "model": "student.hall",
+  "pk": 1014,
+  "fields": {
+    "hall_name": "PLUTO",
+    "gender_policy": "MIXED",
+    "total_capacity": 200
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1006,
+  "fields": {
+    "hall": 1006,
+    "room_number": "1",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1007,
+  "fields": {
+    "hall": 1007,
+    "room_number": "1",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1008,
+  "fields": {
+    "hall": 1008,
+    "room_number": "1",
+    "room_type": "DOUBL",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1009,
+  "fields": {
+    "hall": 1009,
+    "room_number": "1",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1010,
+  "fields": {
+    "hall": 1010,
+    "room_number": "1",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1011,
+  "fields": {
+    "hall": 1011,
+    "room_number": "1",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1012,
+  "fields": {
+    "hall": 1006,
+    "room_number": "2",
+    "room_type": "single",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 1
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1013,
+  "fields": {
+    "hall": 1007,
+    "room_number": "2",
+    "room_type": "single",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 1
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1014,
+  "fields": {
+    "hall": 1008,
+    "room_number": "2",
+    "room_type": "single",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 1
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1015,
+  "fields": {
+    "hall": 1009,
+    "room_number": "2",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1016,
+  "fields": {
+    "hall": 1010,
+    "room_number": "2",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1017,
+  "fields": {
+    "hall": 1006,
+    "room_number": "3",
+    "room_type": "DOUBLE",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
+  "model": "student.room",
+  "pk": 1018,
+  "fields": {
+    "hall": 1006,
+    "room_number": "4",
+    "room_type": "double",
+    "occupancy_status": "Occupied",
+    "bed_capacity": 2
+  }
+},
+{
   "model": "student.student",
   "pk": 1010,
   "fields": {
@@ -1351,6 +3782,918 @@
     "disciplinary_status": false,
     "held_previous_semester": false,
     "profile_picture": ""
+  }
+},
+{
+  "model": "student.announcement",
+  "pk": 3,
+  "fields": {
+    "title": "Hostel Balloting Update",
+    "message": "Room balloting ends this Friday at midnight! Please ensure your profiles are updated",
+    "is_active": true,
+    "created_at": "2026-10-01T13:18:37.188Z"
+  }
+},
+{
+  "model": "student.announcement",
+  "pk": 4,
+  "fields": {
+    "title": "fee payment",
+    "message": "notice  hostel booking  has  started  kindly  pay  your  fee  to  be  eligible",
+    "is_active": true,
+    "created_at": "2026-10-01T13:36:20.198Z"
+  }
+},
+{
+  "model": "student.announcement",
+  "pk": 5,
+  "fields": {
+    "title": "fee payment",
+    "message": "pay  your  fees to be  eligible  for  hostel  booking",
+    "is_active": true,
+    "created_at": "2026-10-01T13:37:54.057Z"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1019,
+  "fields": {
+    "student": 1011,
+    "submission_date": "2026-10-14T15:36:31.196Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1016,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1020,
+  "fields": {
+    "student": 1016,
+    "submission_date": "2026-10-14T15:38:27.851Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1021,
+  "fields": {
+    "student": 1012,
+    "submission_date": "2026-10-15T10:04:33.486Z",
+    "preferred_hall": "VENUS",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1013,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1022,
+  "fields": {
+    "student": 1013,
+    "submission_date": "2026-10-15T10:05:40.691Z",
+    "preferred_hall": "VENUS",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1023,
+  "fields": {
+    "student": 1015,
+    "submission_date": "2026-10-15T10:29:27.292Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1025,
+  "fields": {
+    "student": 1020,
+    "submission_date": "2026-10-15T11:37:20.044Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1019,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1029,
+  "fields": {
+    "student": 1019,
+    "submission_date": "2026-10-15T11:48:19.868Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1030,
+  "fields": {
+    "student": 1017,
+    "submission_date": "2026-10-15T12:21:26.049Z",
+    "preferred_hall": "Hall: MERCURY - Room 2",
+    "preferred_room_type": "Single",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1031,
+  "fields": {
+    "student": 1018,
+    "submission_date": "2026-10-15T12:23:59.980Z",
+    "preferred_hall": "Hall: JUPYTER - Room 1",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1021,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1032,
+  "fields": {
+    "student": 1021,
+    "submission_date": "2026-10-15T12:24:33.150Z",
+    "preferred_hall": "Hall: JUPYTER - Room 1",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1033,
+  "fields": {
+    "student": 1022,
+    "submission_date": "2026-10-15T13:27:18.584Z",
+    "preferred_hall": "Hall: MERCURY - Room 2",
+    "preferred_room_type": "Single",
+    "preferred_roommate": null,
+    "status": "DRAFT"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1034,
+  "fields": {
+    "student": 1023,
+    "submission_date": "2026-10-15T13:44:38.701Z",
+    "preferred_hall": "VENUS",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1035,
+  "fields": {
+    "student": 1025,
+    "submission_date": "2026-10-15T13:55:03.989Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1024,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1036,
+  "fields": {
+    "student": 1024,
+    "submission_date": "2026-10-15T13:56:01.803Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1037,
+  "fields": {
+    "student": 1026,
+    "submission_date": "2026-10-15T18:13:30.278Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1027,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1038,
+  "fields": {
+    "student": 1027,
+    "submission_date": "2026-10-15T18:14:35.309Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1039,
+  "fields": {
+    "student": 1028,
+    "submission_date": "2026-10-15T18:24:10.044Z",
+    "preferred_hall": "MARS",
+    "preferred_room_type": "Single",
+    "preferred_roommate": null,
+    "status": "DRAFT"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1040,
+  "fields": {
+    "student": 1031,
+    "submission_date": "2026-10-15T18:48:53.322Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1029,
+    "status": "REMOVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1041,
+  "fields": {
+    "student": 1029,
+    "submission_date": "2026-10-15T18:50:07.361Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1042,
+  "fields": {
+    "student": 1034,
+    "submission_date": "2026-10-15T19:21:21.867Z",
+    "preferred_hall": "Hall: JUPYTER - Room 2",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1010,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1043,
+  "fields": {
+    "student": 1010,
+    "submission_date": "2026-10-15T19:22:02.351Z",
+    "preferred_hall": "Hall: JUPYTER - Room 2",
+    "preferred_room_type": "Double",
+    "preferred_roommate": null,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1044,
+  "fields": {
+    "student": 1030,
+    "submission_date": "2026-10-15T19:30:30.623Z",
+    "preferred_hall": "MARS",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1035,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1045,
+  "fields": {
+    "student": 1035,
+    "submission_date": "2026-10-15T19:31:00.011Z",
+    "preferred_hall": "MERCURY",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1031,
+    "status": "REMOVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1046,
+  "fields": {
+    "student": 1029,
+    "submission_date": "2026-10-16T08:34:10.067Z",
+    "preferred_hall": "",
+    "preferred_room_type": null,
+    "preferred_roommate": null,
+    "status": "Approved"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1047,
+  "fields": {
+    "student": 1029,
+    "submission_date": "2026-10-16T08:35:55.146Z",
+    "preferred_hall": "",
+    "preferred_room_type": null,
+    "preferred_roommate": null,
+    "status": "Approved"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1048,
+  "fields": {
+    "student": 1038,
+    "submission_date": "2026-10-16T12:57:23.516Z",
+    "preferred_hall": "Hall: MERCURY - Room 3",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1037,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1049,
+  "fields": {
+    "student": 1037,
+    "submission_date": "2026-10-16T13:02:18.550Z",
+    "preferred_hall": "Hall: MERCURY - Room 3",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1038,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1050,
+  "fields": {
+    "student": 1040,
+    "submission_date": "2026-10-16T13:25:19.947Z",
+    "preferred_hall": "Hall: MERCURY - Room 4",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1039,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1051,
+  "fields": {
+    "student": 1039,
+    "submission_date": "2026-10-16T13:25:19.973Z",
+    "preferred_hall": "Hall: MERCURY - Room 4",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1040,
+    "status": "APPROVED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1052,
+  "fields": {
+    "student": 1041,
+    "submission_date": "2026-10-16T13:41:11.908Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1042,
+    "status": "WAITLISTED"
+  }
+},
+{
+  "model": "student.application",
+  "pk": 1053,
+  "fields": {
+    "student": 1042,
+    "submission_date": "2026-10-16T13:41:11.933Z",
+    "preferred_hall": "JUPYTER",
+    "preferred_room_type": "Double",
+    "preferred_roommate": 1041,
+    "status": "WAITLISTED"
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1005,
+  "fields": {
+    "hall": 1006,
+    "name": "jason",
+    "contact_info": "0719225554",
+    "user": 2015
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1006,
+  "fields": {
+    "hall": 1007,
+    "name": "NEEMA",
+    "contact_info": "0781862654",
+    "user": 2016
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1007,
+  "fields": {
+    "hall": 1008,
+    "name": "Hezron",
+    "contact_info": "0715862334",
+    "user": 2017
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1008,
+  "fields": {
+    "hall": 1009,
+    "name": "Justin",
+    "contact_info": "0710741122",
+    "user": 2018
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1009,
+  "fields": {
+    "hall": 1010,
+    "name": "Norah",
+    "contact_info": "0725641953",
+    "user": 2019
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1010,
+  "fields": {
+    "hall": 1011,
+    "name": "Phena",
+    "contact_info": "0113755616",
+    "user": 2020
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1011,
+  "fields": {
+    "hall": 1012,
+    "name": "Gelan",
+    "contact_info": "0115457681",
+    "user": 2022
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1012,
+  "fields": {
+    "hall": 1013,
+    "name": "Dancan",
+    "contact_info": "0143648294",
+    "user": 2021
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1013,
+  "fields": {
+    "hall": 1014,
+    "name": "EngineerPeter",
+    "contact_info": "0716345603",
+    "user": 2023
+  }
+},
+{
+  "model": "student.caretaker",
+  "pk": 1014,
+  "fields": {
+    "hall": 1006,
+    "name": "petersonrooney",
+    "contact_info": "0700000000",
+    "user": 2027
+  }
+},
+{
+  "model": "student.accommodationofficer",
+  "pk": 2,
+  "fields": {
+    "staff_credentials": "Jasonokerosi",
+    "department": "COMPUTING",
+    "user": 2008
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1011,
+  "fields": {
+    "application": 1019,
+    "room": 1006,
+    "timestamp": "2026-10-14T15:38:27.938Z",
+    "confirmation_deadline": "2026-10-21T15:38:27.937Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1012,
+  "fields": {
+    "application": 1020,
+    "room": 1007,
+    "timestamp": "2026-10-14T15:45:21.494Z",
+    "confirmation_deadline": "2026-10-21T15:45:21.493Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1013,
+  "fields": {
+    "application": 1021,
+    "room": 1007,
+    "timestamp": "2026-10-15T10:05:40.854Z",
+    "confirmation_deadline": "2026-10-22T10:05:40.853Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1014,
+  "fields": {
+    "application": 1022,
+    "room": 1008,
+    "timestamp": "2026-10-15T10:05:51.069Z",
+    "confirmation_deadline": "2026-10-22T10:05:51.068Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1015,
+  "fields": {
+    "application": 1023,
+    "room": 1006,
+    "timestamp": "2026-10-15T10:30:27.916Z",
+    "confirmation_deadline": "2026-10-22T10:30:27.914Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1017,
+  "fields": {
+    "application": 1025,
+    "room": 1009,
+    "timestamp": "2026-10-15T11:48:20.095Z",
+    "confirmation_deadline": "2026-10-22T11:48:20.094Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1018,
+  "fields": {
+    "application": 1029,
+    "room": 1009,
+    "timestamp": "2026-10-15T11:48:20.107Z",
+    "confirmation_deadline": "2026-10-22T11:48:20.107Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1019,
+  "fields": {
+    "application": 1030,
+    "room": 1012,
+    "timestamp": "2026-10-15T12:21:52.182Z",
+    "confirmation_deadline": "2026-10-22T12:21:52.181Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1020,
+  "fields": {
+    "application": 1031,
+    "room": 1011,
+    "timestamp": "2026-10-15T12:24:33.349Z",
+    "confirmation_deadline": "2026-10-22T12:24:33.349Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1021,
+  "fields": {
+    "application": 1032,
+    "room": 1010,
+    "timestamp": "2026-10-15T12:26:50.083Z",
+    "confirmation_deadline": "2026-10-22T12:26:50.082Z",
+    "status": "Active"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1022,
+  "fields": {
+    "application": 1034,
+    "room": 1011,
+    "timestamp": "2026-10-15T13:45:06.231Z",
+    "confirmation_deadline": "2026-10-22T13:45:06.231Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1023,
+  "fields": {
+    "application": 1035,
+    "room": 1014,
+    "timestamp": "2026-10-15T13:56:01.924Z",
+    "confirmation_deadline": "2026-10-22T13:56:01.923Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1024,
+  "fields": {
+    "application": 1036,
+    "room": 1010,
+    "timestamp": "2026-10-15T13:59:50.033Z",
+    "confirmation_deadline": "2026-10-22T13:59:50.032Z",
+    "status": "Active"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1025,
+  "fields": {
+    "application": 1037,
+    "room": 1008,
+    "timestamp": "2026-10-15T18:14:35.685Z",
+    "confirmation_deadline": "2026-10-22T18:14:35.684Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1026,
+  "fields": {
+    "application": 1038,
+    "room": 1013,
+    "timestamp": "2026-10-15T18:14:38.550Z",
+    "confirmation_deadline": "2026-10-22T18:14:38.549Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1027,
+  "fields": {
+    "application": 1042,
+    "room": 1016,
+    "timestamp": "2026-10-15T19:22:02.583Z",
+    "confirmation_deadline": "2026-10-22T19:22:02.582Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1028,
+  "fields": {
+    "application": 1043,
+    "room": 1015,
+    "timestamp": "2026-10-15T19:22:54.454Z",
+    "confirmation_deadline": "2026-10-22T19:22:54.454Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1029,
+  "fields": {
+    "application": 1044,
+    "room": 1015,
+    "timestamp": "2026-10-15T19:31:00.710Z",
+    "confirmation_deadline": "2026-10-22T19:31:00.709Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1030,
+  "fields": {
+    "application": 1041,
+    "room": 1016,
+    "timestamp": "2026-10-16T09:21:17.815Z",
+    "confirmation_deadline": "2026-10-23T09:21:17.815Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1031,
+  "fields": {
+    "application": 1049,
+    "room": 1017,
+    "timestamp": "2026-10-16T13:02:35.975Z",
+    "confirmation_deadline": "2026-10-23T13:02:35.970Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1032,
+  "fields": {
+    "application": 1048,
+    "room": 1017,
+    "timestamp": "2026-10-16T13:06:28.802Z",
+    "confirmation_deadline": "2026-10-23T13:06:28.798Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1033,
+  "fields": {
+    "application": 1050,
+    "room": 1018,
+    "timestamp": "2026-10-16T13:25:40.544Z",
+    "confirmation_deadline": "2026-10-23T13:25:40.542Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.allocation",
+  "pk": 1034,
+  "fields": {
+    "application": 1051,
+    "room": 1018,
+    "timestamp": "2026-10-16T13:25:40.544Z",
+    "confirmation_deadline": "2026-10-23T13:25:40.542Z",
+    "status": "Confirmed"
+  }
+},
+{
+  "model": "student.waitinglist",
+  "pk": 9,
+  "fields": {
+    "student": 1041,
+    "priority_score": 10.0,
+    "entry_timestamp": "2026-10-16T13:42:10.699Z"
+  }
+},
+{
+  "model": "student.waitinglist",
+  "pk": 10,
+  "fields": {
+    "student": 1042,
+    "priority_score": 10.0,
+    "entry_timestamp": "2026-10-16T13:42:10.699Z"
+  }
+},
+{
+  "model": "student.transferrequest",
+  "pk": 1006,
+  "fields": {
+    "student": 1023,
+    "reason": "ENVIRONMENTAL ISSUES",
+    "requested_preference": "MERCURY",
+    "status": "Submitted"
+  }
+},
+{
+  "model": "student.transferrequest",
+  "pk": 1007,
+  "fields": {
+    "student": 1023,
+    "reason": "ENVIRONMENTAL ISSUES",
+    "requested_preference": "MERCURY",
+    "status": "Rejected"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 2,
+  "fields": {
+    "student": 1022,
+    "title": "✅ Application Status Cleared",
+    "message": "Your hostel application status has been cleared/reviewed by the accommodation office and is now back under review.",
+    "is_read": false,
+    "created_at": "2026-10-16T10:57:07.578Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 3,
+  "fields": {
+    "student": 1028,
+    "title": "✅ Application Status Cleared",
+    "message": "Your hostel application status has been cleared/reviewed by the accommodation office and is now back under review.",
+    "is_read": false,
+    "created_at": "2026-10-16T10:57:16.096Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 4,
+  "fields": {
+    "student": 1022,
+    "title": "✅ Application Status Cleared",
+    "message": "Your hostel application ineligibility has been cleared by the accommodation office. Please review and re-submit your application.",
+    "is_read": false,
+    "created_at": "2026-10-16T11:27:36.577Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 5,
+  "fields": {
+    "student": 1028,
+    "title": "✅ Application Status Cleared",
+    "message": "Your hostel application ineligibility has been cleared by the accommodation office. Please review and re-submit your application.",
+    "is_read": false,
+    "created_at": "2026-10-16T11:27:46.752Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 6,
+  "fields": {
+    "student": 1038,
+    "title": "❌ Removed from Waiting List",
+    "message": "Your application has been removed from the official hostel waiting list by the accommodation office. Please contact support for further inquiries.",
+    "is_read": false,
+    "created_at": "2026-10-16T12:58:24.158Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 7,
+  "fields": {
+    "student": 1038,
+    "title": "❌ Removed from Waiting List",
+    "message": "Your application has been removed from the official hostel waiting list by the accommodation office. Please contact support for further inquiries.",
+    "is_read": false,
+    "created_at": "2026-10-16T13:00:13.618Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 8,
+  "fields": {
+    "student": 1035,
+    "title": "❌ Removed from Waiting List",
+    "message": "Your application has been removed from the official hostel waiting list by the accommodation office. Please contact support for further inquiries.",
+    "is_read": false,
+    "created_at": "2026-10-16T13:00:20.761Z"
+  }
+},
+{
+  "model": "student.notification",
+  "pk": 9,
+  "fields": {
+    "student": 1022,
+    "title": "✅ Application Status Cleared",
+    "message": "Your hostel application ineligibility has been cleared by the accommodation office. Please review and re-submit your application.",
+    "is_read": false,
+    "created_at": "2026-10-16T13:29:53.338Z"
+  }
+},
+{
+  "model": "student.checkinlog",
+  "pk": 2,
+  "fields": {
+    "allocation": 1021,
+    "checked_in_at": "2026-10-18T19:26:46.025Z",
+    "key_issued": true,
+    "inventory_verified": true,
+    "notes": "N/A"
+  }
+},
+{
+  "model": "student.checkinlog",
+  "pk": 3,
+  "fields": {
+    "allocation": 1024,
+    "checked_in_at": "2026-10-18T19:27:26.462Z",
+    "key_issued": true,
+    "inventory_verified": true,
+    "notes": "good  condition"
   }
 }
 ]
