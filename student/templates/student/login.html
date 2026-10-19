@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kisii University Hostel Portal - Login</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,22 +51,19 @@
             animation: imageSlide 18s infinite;
         }
 
-        /* Timing delay for each of the 3 alternating images (18s total cycle: 6s per image) */
-        .bg-wrapper img:nth-child(1) {
-            animation-delay: 0s;
-        }
-        .bg-wrapper img:nth-child(2) {
-            animation-delay: 6s;
-        }
-        .bg-wrapper img:nth-child(3) {
-            animation-delay: 12s;
-        }
+        /* Timing delay for each of the 6 alternating images (18s total cycle: 3s per image or smooth transition) */
+        .bg-wrapper img:nth-child(1) { animation-delay: 0s; }
+        .bg-wrapper img:nth-child(2) { animation-delay: 3s; }
+        .bg-wrapper img:nth-child(3) { animation-delay: 6s; }
+        .bg-wrapper img:nth-child(4) { animation-delay: 9s; }
+        .bg-wrapper img:nth-child(5) { animation-delay: 12s; }
+        .bg-wrapper img:nth-child(6) { animation-delay: 15s; }
 
         @keyframes imageSlide {
             0% { opacity: 0; transform: scale(1.05); }
             8% { opacity: 1; transform: scale(1); }
-            33% { opacity: 1; transform: scale(1); }
-            41% { opacity: 0; transform: scale(1.05); }
+            20% { opacity: 1; transform: scale(1); }
+            28% { opacity: 0; transform: scale(1.05); }
             100% { opacity: 0; transform: scale(1.05); }
         }
 
@@ -212,10 +210,17 @@
             font-weight: 600;
         }
 
-        /* Responsive design for smaller screens */
+        /* Responsive design for smaller screens (Phones) */
         @media (max-width: 768px) {
+            body {
+                overflow: auto; /* Allow scrolling on small mobile screens */
+            }
             .left-panel { display: none; }
-            .right-panel { width: 100%; }
+            .right-panel { 
+                width: 100%; 
+                height: 100vh;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -254,12 +259,14 @@
                 
                 <div class="form-group">
                     <label for="id_username">Username</label>
-                    {{ form.username }}
+                    <!-- Added mobile keyboard safety attributes -->
+                    <input type="text" name="username" id="id_username" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="username" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="id_password">Password</label>
-                    {{ form.password }}
+                    <!-- Added mobile keyboard safety attributes to prevent accidental capitalization/spaces -->
+                    <input type="password" name="password" id="id_password" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="current-password" required>
                 </div>
 
                 <div class="form-actions">
@@ -271,7 +278,7 @@
                     </div>
                 </div>
                 
-                <button type="submit">Sign Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
 
             <div class="signup-link">
