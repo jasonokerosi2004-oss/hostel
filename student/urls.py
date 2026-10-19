@@ -14,5 +14,6 @@ urlpatterns = [
     # Additional student portal links (adjust names if needed based on your views)
     path('transfer/', views.request_transfer, name='request_transfer'),  # <--- Add this line for transfer request
     path('logout/', views.custom_logout_view, name='logout'),
+    path('signup/', views.signup_view, name='signup'),
     
 ]

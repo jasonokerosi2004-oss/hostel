@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from .models import Student, Allocation, Room, Announcement, TransferRequest, Application, Notification, WaitingList
 from .forms import StudentProfileForm, TransferRequestForm, RoomApplicationForm
+from django.contrib.auth.forms import UserCreationForm
 
 @login_required
 def student_dashboard(request):
@@ -217,3 +218,23 @@ def custom_login_redirect(request):
 def custom_logout_view(request):
     logout(request)
     return redirect('login')
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Automatically create a linked Student profile if your model requires it
+            # Student.objects.get_or_create(user=user)
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}! You can now log in.')
+            return redirect('/accounts/login/')  # Redirects back to your login page
+        else:
+            messages.error(request, "Please correct the errors in the form below.")
+    else:
+        form = UserCreationForm()
+    
+    context = {
+        'form': form,
+    }
+    return render(request, 'student/signup.html', context)
