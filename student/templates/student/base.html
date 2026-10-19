@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Student Portal - Hostel Management{% endblock %}</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,7 +17,8 @@
             display: flex;
             flex-direction: column;
             box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
-            z-index: 10;
+            z-index: 100;
+            transition: transform 0.3s ease;
         }
         .sidebar-menu {
             list-style: none;
@@ -41,10 +43,9 @@
             border-left-color: #93fdbf;
         }
         .sidebar-menu li a.active {
-            background-color: #991b1b; /* Dark red highlight for active page */
+            background-color: #991b1b;
             border-left-color: #fca5a5;
         }
-        .arrow { font-size: 12px; color: #cbd5e1; }
 
         /* Main Container */
         .main-container {
@@ -52,9 +53,10 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            width: 100%;
         }
 
-        /* Topbar with Logo and Brand Name on the Left */
+        /* Topbar Styling */
         .topbar {
             background: white;
             padding: 12px 30px;
@@ -78,6 +80,17 @@
             font-weight: 700;
             color: #1e40af;
             margin: 0;
+        }
+
+        /* Hamburger Toggle Button (Hidden on Desktop) */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #1e40af;
+            cursor: pointer;
+            margin-right: 10px;
         }
 
         .user-actions {
@@ -106,12 +119,64 @@
         .alert { padding: 12px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px; }
         .alert-success { background: #dcfce7; color: #166534; }
         .alert-error { background: #fee2e2; color: #991b1b; }
+
+        /* --- RESPONSIVE MOBILE STYLING (Screens <= 768px) --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                overflow: auto;
+            }
+
+            /* Hide sidebar off-screen by default on mobile */
+            .sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                transform: translateX(-100%);
+                width: 250px;
+            }
+
+            /* Active class makes sidebar slide into view */
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            /* Show the hamburger menu button */
+            .mobile-toggle {
+                display: block;
+            }
+
+            .topbar {
+                padding: 10px 15px;
+            }
+
+            .content-body {
+                padding: 15px;
+            }
+
+            /* Stack cards/grids vertically on mobile */
+            .dashboard-grid, 
+            .card-container, 
+            .row,
+            form {
+                display: flex;
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+
+            .dashboard-card, 
+                .card {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Sidebar Component -->
-    <div class="sidebar">
+    <div class="sidebar" id="appSidebar">
         <ul class="sidebar-menu">
             <li><a href="{% url 'student_dashboard' %}" class="{% if request.resolver_match.url_name == 'student_dashboard' %}active{% endif %}">Dashboard <span>&rsaquo;</span></a></li>
             <li><a href="{% url 'apply_room' %}" class="{% if request.resolver_match.url_name == 'apply_room' %}active{% endif %}">Room Application <span>&rsaquo;</span></a></li>
@@ -125,14 +190,15 @@
 
     <!-- Main Container -->
     <div class="main-container">
-        <!-- Topbar with Logo, Avatar, and Title -->
+        <!-- Topbar with Hamburger, Logo, Avatar, and Title -->
         <div class="topbar">
             <div class="brand-container">
+                <!-- Hamburger Menu Button -->
+                <button class="mobile-toggle" id="sidebarToggle" aria-label="Toggle navigation">&#9776;</button>
                 <img src="{% static 'student/logo.png' %}" alt="Portal Logo">
                 <h2>Kisii University</h2>
             </div>
             <div class="user-actions">
-                <!-- Circular Avatar & Welcome Information -->
                 {% if student %}
                     <a href="{% url 'student_dashboard' %}" title="View Dashboard" style="text-decoration: none; display: flex; align-items: center;">
                         {% if student.profile_picture %}
@@ -143,12 +209,12 @@
                             </div>
                         {% endif %}
                     </a>
-                    <span style="font-size: 14px; font-weight: 500; color: #334155;">
-                        Welcome, {{ student.full_name }}
+                    <span style="font-size: 14px; font-weight: 500; color: #334155; display: none; sm-display: inline;">
+                        {{ student.full_name }}
                     </span>
                 {% else %}
                     <span style="font-size: 14px; font-weight: 500; color: #334155;">
-                        Welcome, {{ request.user.username }}
+                        {{ request.user.username }}
                     </span>
                 {% endif %}
 
@@ -180,5 +246,18 @@
         </div>
     </div>
 
+    <!-- JavaScript to Handle Sidebar Toggle on Mobile -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleBtn = document.getElementById("sidebarToggle");
+            const sidebar = document.getElementById("appSidebar");
+
+            if (toggleBtn && sidebar) {
+                toggleBtn.addEventListener("click", function() {
+                    sidebar.classList.toggle("active");
+                });
+            }
+        });
+    </script>
 </body>
 </html>

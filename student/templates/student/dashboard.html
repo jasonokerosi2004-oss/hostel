@@ -4,14 +4,18 @@
 
 {% block content %}
 <style>
-    /* Dashboard specific overrides matching your custom styles */
+    /* Dashboard specific layout matching full responsiveness */
     .dashboard-grid { 
         display: grid; 
         grid-template-columns: 1fr 1fr; 
         gap: 20px; 
     }
+
+    /* Collapse grid on screens under 900px down to single column mobile view */
     @media (max-width: 900px) { 
-        .dashboard-grid { grid-template-columns: 1fr; } 
+        .dashboard-grid { 
+            grid-template-columns: 1fr !important; 
+        } 
     }
 
     .card { 
@@ -21,6 +25,7 @@
         border-radius: 8px; 
         box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
         margin-bottom: 20px; 
+        box-sizing: border-box;
     }
     .card h3 { 
         margin-top: 0; 
@@ -184,7 +189,7 @@
                     <p style="margin-bottom: 0;"><strong>Allocated On:</strong> {{ allocation.timestamp }}</p>
 
                 {% elif application and application.status|upper == 'REMOVED' %}
-                    <!-- Scenario B1: Student removed from waiting list by officer (Prioritized above waitlist_entry) -->
+                    <!-- Scenario B1: Student removed from waiting list by officer -->
                     <p>Status: <span class="badge badge-danger">REMOVED FROM WAITLIST 🚫</span></p>
                     <hr style="border:0; border-top:1px solid rgba(0,0,0,0.1); margin: 15px 0;">
                     <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 12px 15px; border-radius: 4px; margin-bottom: 15px;">
@@ -196,7 +201,6 @@
                     <p style="font-size: 13px; margin-top: 12px; color: #555; line-height: 1.4;">
                         If you would like to re-apply for room allocation, please submit a new application below:
                     </p>
-                    <!-- 🚀 Re-submit Button for Removed Waitlist Students -->
                     <a href="{% url 'apply_room' %}" class="apply-btn" style="background: #2563eb;">
                         Re-submit Room Application 🚀
                     </a>
@@ -237,7 +241,7 @@
                             All standard rooms matching your criteria are currently occupied. You have been placed on the priority waiting list.
                         </p>
                     </div>
-                    <div style="display: flex; gap: 10px; margin-top: 12px;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px;">
                         <span style="background: white; padding: 8px 12px; border-radius: 6px; font-weight: 600; color: #0369a1; border: 1px solid #bae6fd; font-size: 13px;">
                             ⭐ Priority Score: {{ waitlist_entry.priority_score }} pts
                         </span>
